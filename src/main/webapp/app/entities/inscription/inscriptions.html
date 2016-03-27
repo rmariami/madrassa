@@ -1,0 +1,89 @@
+<div>
+    <h2 translate="madrassaApp.inscription.home.title">Inscriptions</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="inscription.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="madrassaApp.inscription.home.createLabel">
+                        Create new Inscription
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'madrassaApp.inscription.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="date"><span translate="madrassaApp.inscription.date">Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="price"><span translate="madrassaApp.inscription.price">Price</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="statut"><span translate="madrassaApp.inscription.statut">Statut</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="classRoom.id"><span translate="madrassaApp.inscription.classRoom">classRoom</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="scholar.id"><span translate="madrassaApp.inscription.scholar">scholar</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="author.id"><span translate="madrassaApp.inscription.author">author</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="inscription in vm.inscriptions track by inscription.id">
+                    <td><a ui-sref="inscription-detail({id:inscription.id})">{{inscription.id}}</a></td>
+                    <td>{{inscription.date | date:'medium'}}</td>
+                    <td>{{inscription.price}}</td>
+                    <td>{{inscription.statut}}</td>
+                    <td>
+                        <a ui-sref="class-room-detail({id:inscription.classRoom.id})">{{inscription.classRoom.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="scholar-detail({id:inscription.scholar.id})">{{inscription.scholar.id}}</a>
+                    </td>
+                    <td>
+                        {{inscription.author.id}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="inscription-detail({id:inscription.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="inscription.edit({id:inscription.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="inscription.delete({id:inscription.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

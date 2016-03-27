@@ -1,0 +1,98 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTeacherLabel" translate="madrassaApp.teacher.home.createOrEditLabel">Create or edit a Teacher</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.teacher.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="madrassaApp.teacher.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.teacher.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="madrassaApp.teacher.firstName" for="field_firstName">FirstName</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                    ng-model="vm.teacher.firstName"
+                    required />
+            <div ng-show="editForm.firstName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.firstName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="madrassaApp.teacher.adress" for="field_adress">Adress</label>
+            <input type="text" class="form-control" name="adress" id="field_adress"
+                    ng-model="vm.teacher.adress"
+                    required />
+            <div ng-show="editForm.adress.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.adress.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="madrassaApp.teacher.phoneNumber" for="field_phoneNumber">PhoneNumber</label>
+            <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                    ng-model="vm.teacher.phoneNumber"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="madrassaApp.teacher.mobilePhoneNumber" for="field_mobilePhoneNumber">MobilePhoneNumber</label>
+            <input type="text" class="form-control" name="mobilePhoneNumber" id="field_mobilePhoneNumber"
+                    ng-model="vm.teacher.mobilePhoneNumber"
+                    required />
+            <div ng-show="editForm.mobilePhoneNumber.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.mobilePhoneNumber.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="madrassaApp.teacher.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.teacher.email"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="madrassaApp.teacher.user" for="field_user">user</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.teacher.user" ng-options="user as user.id for user in vm.users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="madrassaApp.teacher.classes" for="field_classes">classes</label>
+            <select class="form-control" id="field_classes" name="classes" ng-model="vm.teacher.classes" ng-options="classRoom as classRoom.code for classRoom in vm.classrooms track by classRoom.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

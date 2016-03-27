@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span translate="madrassaApp.inscription.detail.title">Inscription</span> {{vm.inscription.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="madrassaApp.inscription.date">Date</dt></dt>
+        <dd>
+            <span>{{vm.inscription.date | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.inscription.price">Price</dt></dt>
+        <dd>
+            <span>{{vm.inscription.price}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.inscription.statut">Statut</dt></dt>
+        <dd>
+            <span>{{vm.inscription.statut}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.inscription.classRoom">classRoom</span></dt>
+        <dd>
+            <a ui-sref="class-room-detail({id:vm.inscription.classRoom.id})">{{vm.inscription.classRoom.id}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.inscription.scholar">scholar</span></dt>
+        <dd>
+            <a ui-sref="scholar-detail({id:vm.inscription.scholar.id})">{{vm.inscription.scholar.id}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.inscription.author">author</span></dt>
+        <dd>
+            {{vm.inscription.author.id}}
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,68 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "user",
+      "otherEntityName": "user",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "teacher"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "classes",
+      "otherEntityName": "classRoom",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "code"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "adress",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "mobilePhoneNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "email",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160327172432",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "no"
+}

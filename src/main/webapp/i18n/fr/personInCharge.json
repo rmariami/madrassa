@@ -1,0 +1,29 @@
+{
+    "madrassaApp": {
+        "personInCharge" : {
+            "home": {
+                "title": "PersonInCharges",
+                "createLabel": "Créer un nouveau PersonInCharge",
+                "createOrEditLabel": "Créer ou éditer un PersonInCharge",
+                "search": "Recherche pour PersonInCharge"
+            },
+            "created": "Un nouveau PersonInCharge a été créé avec l'identifiant {{ param }}",
+            "updated": "Le PersonInCharge avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le PersonInCharge avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le PersonInCharge {{ id }} ?"
+            },
+            "detail": {
+                "title": "PersonInCharge"
+            },
+            "name": "Name",
+            "firstName": "FirstName",
+            "adress": "Adress",
+            "work": "Work",
+            "phoneNumber": "PhoneNumber",
+            "mobilePhoneNumber": "MobilePhoneNumber",
+            "email": "Email",
+            "scholar": "Scholar"
+        }
+    }
+}

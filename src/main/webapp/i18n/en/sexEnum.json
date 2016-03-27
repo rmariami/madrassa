@@ -1,0 +1,9 @@
+{
+    "madrassaApp": {
+        "SexEnum" : {
+            "null": "",
+            "MAN": "MAN",
+            "WOMEN": "WOMEN"
+        }
+    }
+}

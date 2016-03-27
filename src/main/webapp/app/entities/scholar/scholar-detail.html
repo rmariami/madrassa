@@ -1,0 +1,61 @@
+
+<div>
+    <h2><span translate="madrassaApp.scholar.detail.title">Scholar</span> {{vm.scholar.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="madrassaApp.scholar.scholarNumber">ScholarNumber</dt></dt>
+        <dd>
+            <span>{{vm.scholar.scholarNumber}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.scholar.sex">Sex</dt></dt>
+        <dd>
+            <span translate="{{'madrassaApp.SexEnum.' + vm.scholar.sex}}">{{vm.scholar.sex}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.scholar.name">Name</dt></dt>
+        <dd>
+            <span>{{vm.scholar.name}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.scholar.firstName">FirstName</dt></dt>
+        <dd>
+            <span>{{vm.scholar.firstName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.scholar.birthDate">BirthDate</dt></dt>
+        <dd>
+            <span>{{vm.scholar.birthDate | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.scholar.birthPlace">BirthPlace</dt></dt>
+        <dd>
+            <span>{{vm.scholar.birthPlace}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.scholar.photo">Photo</dt></dt>
+        <dd>
+            <img data-ng-src="{{'data:' + vm.scholar.photoContentType + ';base64,' + vm.scholar.photo}}" style="max-width: 100%;" ng-if="vm.scholar.photo"/>
+            <div>{{vm.scholar.photoContentType}}, {{vm.byteSize(vm.scholar.photo)}}</div>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.scholar.nbYearsXP">NbYearsXP</dt></dt>
+        <dd>
+            <span>{{vm.scholar.nbYearsXP}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.scholar.personInCharge">personInCharge</span></dt>
+        <dd>
+            <span ng-repeat="personInCharge in vm.scholar.personInCharges">
+                <a ui-sref="person-in-charge-detail({id: {{personInCharge.id}}})">{{personInCharge.firstName}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

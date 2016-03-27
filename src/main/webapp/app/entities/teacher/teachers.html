@@ -1,0 +1,91 @@
+<div>
+    <h2 translate="madrassaApp.teacher.home.title">Teachers</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="teacher.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="madrassaApp.teacher.home.createLabel">
+                        Create new Teacher
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'madrassaApp.teacher.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span translate="madrassaApp.teacher.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="firstName"><span translate="madrassaApp.teacher.firstName">FirstName</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="adress"><span translate="madrassaApp.teacher.adress">Adress</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="phoneNumber"><span translate="madrassaApp.teacher.phoneNumber">PhoneNumber</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="mobilePhoneNumber"><span translate="madrassaApp.teacher.mobilePhoneNumber">MobilePhoneNumber</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="email"><span translate="madrassaApp.teacher.email">Email</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="user.id"><span translate="madrassaApp.teacher.user">user</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="classes.code"><span translate="madrassaApp.teacher.classes">classes</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="teacher in vm.teachers track by teacher.id">
+                    <td><a ui-sref="teacher-detail({id:teacher.id})">{{teacher.id}}</a></td>
+                    <td>{{teacher.name}}</td>
+                    <td>{{teacher.firstName}}</td>
+                    <td>{{teacher.adress}}</td>
+                    <td>{{teacher.phoneNumber}}</td>
+                    <td>{{teacher.mobilePhoneNumber}}</td>
+                    <td>{{teacher.email}}</td>
+                    <td>
+                        {{teacher.user.id}}
+                    </td>
+                    <td>
+                        <a ui-sref="class-room-detail({id:teacher.classes.id})">{{teacher.classes.code}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="teacher-detail({id:teacher.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="teacher.edit({id:teacher.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="teacher.delete({id:teacher.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

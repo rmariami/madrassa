@@ -1,0 +1,53 @@
+
+<div>
+    <h2><span translate="madrassaApp.teacher.detail.title">Teacher</span> {{vm.teacher.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="madrassaApp.teacher.name">Name</dt></dt>
+        <dd>
+            <span>{{vm.teacher.name}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.teacher.firstName">FirstName</dt></dt>
+        <dd>
+            <span>{{vm.teacher.firstName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.teacher.adress">Adress</dt></dt>
+        <dd>
+            <span>{{vm.teacher.adress}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.teacher.phoneNumber">PhoneNumber</dt></dt>
+        <dd>
+            <span>{{vm.teacher.phoneNumber}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.teacher.mobilePhoneNumber">MobilePhoneNumber</dt></dt>
+        <dd>
+            <span>{{vm.teacher.mobilePhoneNumber}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.teacher.email">Email</dt></dt>
+        <dd>
+            <span>{{vm.teacher.email}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.teacher.user">user</span></dt>
+        <dd>
+            {{vm.teacher.user.id}}
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.teacher.classes">classes</span></dt>
+        <dd>
+            <a ui-sref="class-room-detail({id:vm.teacher.classes.id})">{{vm.teacher.classes.code}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

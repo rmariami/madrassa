@@ -1,0 +1,28 @@
+{
+    "madrassaApp": {
+        "classRoom" : {
+            "home": {
+                "title": "ClassRooms",
+                "createLabel": "Create a new ClassRoom",
+                "createOrEditLabel": "Create or edit a ClassRoom",
+                "search": "Search for ClassRoom"
+            },
+            "created": "A new ClassRoom is created with identifier {{ param }}",
+            "updated": "A ClassRoom is updated with identifier {{ param }}",
+            "deleted": "A ClassRoom is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete ClassRoom {{ id }}?"
+            },
+            "detail": {
+                "title": "ClassRoom"
+            },
+            "code": "Code",
+            "name": "Name",
+            "moment": "Moment",
+            "startHour": "StartHour",
+            "endHour": "EndHour",
+            "teacher": "Teacher",
+            "scholars": "Scholars"
+        }
+    }
+}

@@ -1,0 +1,78 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "personInCharge",
+      "otherEntityName": "personInCharge",
+      "relationshipType": "many-to-many",
+      "otherEntityField": "firstName",
+      "ownerSide": true
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "scholarNumber",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "sex",
+      "fieldType": "SexEnum",
+      "fieldValues": "MAN,WOMEN"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "birthDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "birthPlace",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "photo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "nbYearsXP",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160327172430",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "no"
+}

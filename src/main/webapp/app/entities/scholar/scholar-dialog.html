@@ -1,0 +1,148 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myScholarLabel" translate="madrassaApp.scholar.home.createOrEditLabel">Create or edit a Scholar</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.scholar.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="madrassaApp.scholar.scholarNumber" for="field_scholarNumber">ScholarNumber</label>
+            <input type="number" class="form-control" name="scholarNumber" id="field_scholarNumber"
+                    ng-model="vm.scholar.scholarNumber"
+                    required />
+            <div ng-show="editForm.scholarNumber.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.scholarNumber.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.scholarNumber.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="madrassaApp.scholar.sex" for="field_sex">Sex</label>
+            <select class="form-control" name="sex" ng-model="vm.scholar.sex" id="field_sex">
+                <option value="MAN" translate="madrassaApp.SexEnum.MAN">MAN</option>
+                <option value="WOMEN" translate="madrassaApp.SexEnum.WOMEN">WOMEN</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="madrassaApp.scholar.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.scholar.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="madrassaApp.scholar.firstName" for="field_firstName">FirstName</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                    ng-model="vm.scholar.firstName"
+                    required />
+            <div ng-show="editForm.firstName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.firstName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="madrassaApp.scholar.birthDate" for="field_birthDate">BirthDate</label>
+                <div class="input-group">
+                    <input id="field_birthDate" type="text" class="form-control" name="birthDate" datetime-picker="{{dateformat}}" ng-model="vm.scholar.birthDate" is-open="vm.datePickerOpenStatus.birthDate"
+                    required  />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('birthDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.birthDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.birthDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.birthDate.$error.ZonedDateTimelocal" translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="madrassaApp.scholar.birthPlace" for="field_birthPlace">BirthPlace</label>
+            <input type="text" class="form-control" name="birthPlace" id="field_birthPlace"
+                    ng-model="vm.scholar.birthPlace"
+                    required />
+            <div ng-show="editForm.birthPlace.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.birthPlace.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setPhoto($file, vm.scholar)" ngf-pattern="'image/*'">
+            <label class="control-label" translate="madrassaApp.scholar.photo" for="field_photo">Photo</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.scholar.photoContentType + ';base64,' + vm.scholar.photo}}" style="max-height: 100px;" ng-if="vm.scholar.photo"/>
+                <div class="help-block clearfix">
+                    <span class="pull-left">{{vm.scholar.photoContentType}}, {{byteSize(vm.scholar.photo)}}</span>
+                    <button ng-click="vm.scholar.photo=null;vm.scholar.photoContentType=null;"
+                            ng-if="vm.scholar.photo"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setPhoto($file, vm.scholar)" accept="image/*" translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="photo" id="field_photo"
+                    ng-model="vm.scholar.photo"
+                     />
+            <input type="hidden" class="form-control" name="photoContentType" id="field_photoContentType"
+                    ng-model="vm.scholar.photoContentType" />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="madrassaApp.scholar.nbYearsXP" for="field_nbYearsXP">NbYearsXP</label>
+            <input type="number" class="form-control" name="nbYearsXP" id="field_nbYearsXP"
+                    ng-model="vm.scholar.nbYearsXP"
+                    required />
+            <div ng-show="editForm.nbYearsXP.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nbYearsXP.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.nbYearsXP.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="madrassaApp.scholar.personInCharge" for="field_personInCharge">personInCharge</label>
+            <select class="form-control" id="field_personInCharge" multiple name="personInCharge" ng-model="vm.scholar.personInCharges" ng-options="personInCharge as personInCharge.firstName for personInCharge in vm.personincharges track by personInCharge.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

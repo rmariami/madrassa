@@ -1,0 +1,65 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "teacher",
+      "otherEntityName": "teacher",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "classes"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "scholars",
+      "otherEntityName": "scholar",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "moment",
+      "fieldType": "ClassMoment",
+      "fieldValues": "SATURDAY_MORNING,SUNDAY_MORNING",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "startHour",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "endHour",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160327172431",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "no"
+}

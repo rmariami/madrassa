@@ -1,0 +1,23 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "inscription",
+      "otherEntityName": "inscription",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "moment",
+      "fieldType": "ClassMoment",
+      "fieldValues": "SATURDAY_MORNING,SUNDAY_MORNING"
+    }
+  ],
+  "changelogDate": "20160327172434",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "no"
+}

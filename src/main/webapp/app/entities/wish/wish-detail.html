@@ -1,0 +1,23 @@
+
+<div>
+    <h2><span translate="madrassaApp.wish.detail.title">Wish</span> {{vm.wish.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="madrassaApp.wish.moment">Moment</dt></dt>
+        <dd>
+            <span translate="{{'madrassaApp.ClassMoment.' + vm.wish.moment}}">{{vm.wish.moment}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.wish.inscription">inscription</span></dt>
+        <dd>
+            <a ui-sref="inscription-detail({id:vm.wish.inscription.id})">{{vm.wish.inscription.id}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

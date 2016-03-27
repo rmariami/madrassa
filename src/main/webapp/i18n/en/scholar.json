@@ -1,0 +1,30 @@
+{
+    "madrassaApp": {
+        "scholar" : {
+            "home": {
+                "title": "Scholars",
+                "createLabel": "Create a new Scholar",
+                "createOrEditLabel": "Create or edit a Scholar",
+                "search": "Search for Scholar"
+            },
+            "created": "A new Scholar is created with identifier {{ param }}",
+            "updated": "A Scholar is updated with identifier {{ param }}",
+            "deleted": "A Scholar is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Scholar {{ id }}?"
+            },
+            "detail": {
+                "title": "Scholar"
+            },
+            "scholarNumber": "ScholarNumber",
+            "sex": "Sex",
+            "name": "Name",
+            "firstName": "FirstName",
+            "birthDate": "BirthDate",
+            "birthPlace": "BirthPlace",
+            "photo": "Photo",
+            "nbYearsXP": "NbYearsXP",
+            "personInCharge": "PersonInCharge"
+        }
+    }
+}

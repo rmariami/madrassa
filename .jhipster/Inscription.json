@@ -1,0 +1,68 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "classRoom",
+      "otherEntityName": "classRoom",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "inscription"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "scholar",
+      "otherEntityName": "scholar",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "inscription"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "author",
+      "otherEntityName": "user",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "inscription"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "wishs",
+      "otherEntityName": "wish",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "inscription"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "date",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "price",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "statut",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160327172433",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "no"
+}

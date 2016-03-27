@@ -1,0 +1,9 @@
+{
+    "madrassaApp": {
+        "ClassMoment" : {
+            "null": "",
+            "SATURDAY_MORNING": "SATURDAY_MORNING",
+            "SUNDAY_MORNING": "SUNDAY_MORNING"
+        }
+    }
+}

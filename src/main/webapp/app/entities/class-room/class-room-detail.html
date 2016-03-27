@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span translate="madrassaApp.classRoom.detail.title">ClassRoom</span> {{vm.classRoom.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="madrassaApp.classRoom.code">Code</dt></dt>
+        <dd>
+            <span>{{vm.classRoom.code}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.classRoom.name">Name</dt></dt>
+        <dd>
+            <span>{{vm.classRoom.name}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.classRoom.moment">Moment</dt></dt>
+        <dd>
+            <span translate="{{'madrassaApp.ClassMoment.' + vm.classRoom.moment}}">{{vm.classRoom.moment}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.classRoom.startHour">StartHour</dt></dt>
+        <dd>
+            <span>{{vm.classRoom.startHour}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.classRoom.endHour">EndHour</dt></dt>
+        <dd>
+            <span>{{vm.classRoom.endHour}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="madrassaApp.classRoom.scholars">scholars</span></dt>
+        <dd>
+            <a ui-sref="scholar-detail({id:vm.classRoom.scholars.id})">{{vm.classRoom.scholars.id}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

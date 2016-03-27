@@ -1,0 +1,87 @@
+enum SexEnum {
+	MAN, WOMEN
+}
+
+enum ClassMoment {
+	SATURDAY_MORNING, SUNDAY_MORNING
+}
+
+entity PersonInCharge {
+	name String required,
+    firstName String required,
+    adress String required,
+    work String required,
+    phoneNumber String,
+    mobilePhoneNumber String required,
+    email String
+}
+
+entity Scholar {
+  scholarNumber Integer required,
+  sex SexEnum,
+  name String required,
+  firstName String required,
+  birthDate ZonedDateTime required,
+  birthPlace String required,
+  photo ImageBlob,
+  nbYearsXP Integer required
+}
+
+entity ClassRoom {
+	code String required,
+    name String required,
+    moment ClassMoment required,
+    startHour String required,
+    endHour String required
+}
+
+entity Teacher {
+  name String required,
+    firstName String required,
+    adress String required,
+    phoneNumber String,
+    mobilePhoneNumber String required,
+    email String
+}
+
+entity Inscription {
+	date ZonedDateTime required,
+    price BigDecimal required,
+    statut String required
+}
+
+entity Wish {
+    moment ClassMoment
+}
+
+
+relationship OneToOne {
+  Inscription{classRoom} to ClassRoom
+}
+relationship OneToOne {
+  Inscription{scholar} to Scholar
+}
+relationship OneToOne {
+  Inscription{author} to User
+}
+relationship OneToMany {
+  Inscription{wishs} to Wish
+}
+
+relationship OneToOne {
+  Teacher{user} to User
+}
+
+relationship OneToMany {
+  ClassRoom{teacher} to Teacher{classes(code)}
+}
+relationship ManyToOne {
+  ClassRoom{scholars} to Scholar
+}
+
+relationship ManyToMany {
+  Scholar{personInCharge(firstName)} to PersonInCharge{scholar}
+}
+
+
+paginate all with infinite-scroll
