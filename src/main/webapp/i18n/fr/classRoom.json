@@ -2,27 +2,27 @@
     "madrassaApp": {
         "classRoom" : {
             "home": {
-                "title": "ClassRooms",
-                "createLabel": "Créer un nouveau ClassRoom",
-                "createOrEditLabel": "Créer ou éditer un ClassRoom",
-                "search": "Recherche pour ClassRoom"
+                "title": "Classes",
+                "createLabel": "Créer une nouvelle classe",
+                "createOrEditLabel": "Créer ou éditer une classe",
+                "search": "Rechercher une classe"
             },
-            "created": "Un nouveau ClassRoom a été créé avec l'identifiant {{ param }}",
-            "updated": "Le ClassRoom avec l'identifiant {{ param }} a été mis à jour",
-            "deleted": "Le ClassRoom avec l'identifiant {{ param }} a été supprimé",
+            "created": "Une nouvelle classe a été créée avec l'identifiant {{ param }}",
+            "updated": "La classe avec l'identifiant {{ param }} a été mise à jour",
+            "deleted": "La classe avec l'identifiant {{ param }} a été supprimée",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le ClassRoom {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer la classe {{ id }} ?"
             },
             "detail": {
-                "title": "ClassRoom"
+                "title": "Classe"
             },
             "code": "Code",
-            "name": "Name",
-            "moment": "Moment",
-            "startHour": "StartHour",
-            "endHour": "EndHour",
-            "teacher": "Teacher",
-            "scholars": "Scholars"
+            "name": "Nom",
+            "moment": "Jours",
+            "startHour": "Heure de début",
+            "endHour": "Heure de fin",
+            "teacher": "Enseignant",
+            "scholars": "Écoliers"
         }
     }
 }

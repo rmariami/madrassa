@@ -3,15 +3,15 @@
         "inscription" : {
             "home": {
                 "title": "Inscriptions",
-                "createLabel": "Create a new Inscription",
-                "createOrEditLabel": "Create or edit a Inscription",
-                "search": "Search for Inscription"
+                "createLabel": "Add a new inscription",
+                "createOrEditLabel": "Add or edit an inscription",
+                "search": "Search for inscription"
             },
-            "created": "A new Inscription is created with identifier {{ param }}",
-            "updated": "A Inscription is updated with identifier {{ param }}",
-            "deleted": "A Inscription is deleted with identifier {{ param }}",
+            "created": "A new inscription is created with identifier {{ param }}",
+            "updated": "A inscription is updated with identifier {{ param }}",
+            "deleted": "A inscription is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Inscription {{ id }}?"
+                "question": "Are you sure you want to delete inscription {{ id }}?"
             },
             "detail": {
                 "title": "Inscription"
@@ -19,7 +19,7 @@
             "date": "Date",
             "price": "Price",
             "statut": "Statut",
-            "classRoom": "ClassRoom",
+            "classRoom": "Class",
             "scholar": "Scholar",
             "author": "Author",
             "wishs": "Wishs"

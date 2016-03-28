@@ -2,29 +2,29 @@
     "madrassaApp": {
         "scholar" : {
             "home": {
-                "title": "Scholars",
-                "createLabel": "Créer un nouveau Scholar",
-                "createOrEditLabel": "Créer ou éditer un Scholar",
-                "search": "Recherche pour Scholar"
+                "title": "Écoliers",
+                "createLabel": "Ajouter un nouvel écolier",
+                "createOrEditLabel": "Ajouter ou éditer un écolier",
+                "search": "Rechercher un écolier"
             },
-            "created": "Un nouveau Scholar a été créé avec l'identifiant {{ param }}",
-            "updated": "Le Scholar avec l'identifiant {{ param }} a été mis à jour",
-            "deleted": "Le Scholar avec l'identifiant {{ param }} a été supprimé",
+            "created": "Un nouveau écolier a été créé avec l'identifiant {{ param }}",
+            "updated": "Le écolier avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le écolier avec l'identifiant {{ param }} a été supprimé",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Scholar {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer le écolier {{ id }} ?"
             },
             "detail": {
-                "title": "Scholar"
+                "title": "Écolier"
             },
-            "scholarNumber": "ScholarNumber",
-            "sex": "Sex",
-            "name": "Name",
-            "firstName": "FirstName",
-            "birthDate": "BirthDate",
-            "birthPlace": "BirthPlace",
+            "scholarNumber": "Numéro",
+            "sex": "Sexe",
+            "name": "Nom",
+            "firstName": "Prénom",
+            "birthDate": "Date de naissance",
+            "birthPlace": "Lieu de naissance",
             "photo": "Photo",
-            "nbYearsXP": "NbYearsXP",
-            "personInCharge": "PersonInCharge"
+            "nbYearsXP": "Nombre d'années d'expérience",
+            "personInCharge": "Responsable légale"
         }
     }
 }

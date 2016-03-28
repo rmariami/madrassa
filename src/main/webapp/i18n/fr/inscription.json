@@ -3,26 +3,26 @@
         "inscription" : {
             "home": {
                 "title": "Inscriptions",
-                "createLabel": "Créer un nouveau Inscription",
-                "createOrEditLabel": "Créer ou éditer un Inscription",
-                "search": "Recherche pour Inscription"
+                "createLabel": "Nouvelle inscription",
+                "createOrEditLabel": "Ajouter ou éditer une inscription",
+                "search": "Rechercher une inscription"
             },
-            "created": "Un nouveau Inscription a été créé avec l'identifiant {{ param }}",
-            "updated": "Le Inscription avec l'identifiant {{ param }} a été mis à jour",
-            "deleted": "Le Inscription avec l'identifiant {{ param }} a été supprimé",
+            "created": "Une nouvelle inscription a été créée avec l'identifiant {{ param }}",
+            "updated": "L'inscription avec l'identifiant {{ param }} a été mise à jour",
+            "deleted": "L'inscription avec l'identifiant {{ param }} a été supprimée",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Inscription {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer l'inscription {{ id }} ?"
             },
             "detail": {
                 "title": "Inscription"
             },
             "date": "Date",
-            "price": "Price",
+            "price": "Prix",
             "statut": "Statut",
-            "classRoom": "ClassRoom",
-            "scholar": "Scholar",
-            "author": "Author",
-            "wishs": "Wishs"
+            "classRoom": "Classe",
+            "scholar": "Écolier",
+            "author": "Auteur",
+            "wishs": "Choix"
         }
     }
 }

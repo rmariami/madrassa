@@ -3,20 +3,20 @@
         "wish" : {
             "home": {
                 "title": "Wishes",
-                "createLabel": "Create a new Wish",
-                "createOrEditLabel": "Create or edit a Wish",
-                "search": "Search for Wish"
+                "createLabel": "Create a new wish",
+                "createOrEditLabel": "Create or edit a wish",
+                "search": "Search for wish"
             },
-            "created": "A new Wish is created with identifier {{ param }}",
-            "updated": "A Wish is updated with identifier {{ param }}",
-            "deleted": "A Wish is deleted with identifier {{ param }}",
+            "created": "A new wish is created with identifier {{ param }}",
+            "updated": "A wish is updated with identifier {{ param }}",
+            "deleted": "A wish is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Wish {{ id }}?"
+                "question": "Are you sure you want to delete wish {{ id }}?"
             },
             "detail": {
                 "title": "Wish"
             },
-            "moment": "Moment",
+            "moment": "Day",
             "inscription": "Inscription"
         }
     }

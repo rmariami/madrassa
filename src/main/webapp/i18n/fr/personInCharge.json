@@ -2,28 +2,28 @@
     "madrassaApp": {
         "personInCharge" : {
             "home": {
-                "title": "PersonInCharges",
-                "createLabel": "Créer un nouveau PersonInCharge",
-                "createOrEditLabel": "Créer ou éditer un PersonInCharge",
-                "search": "Recherche pour PersonInCharge"
+                "title": "Responsables",
+                "createLabel": "Créer un nouveau responsable",
+                "createOrEditLabel": "Créer ou éditer un responsable",
+                "search": "Rechercher un responsable"
             },
-            "created": "Un nouveau PersonInCharge a été créé avec l'identifiant {{ param }}",
-            "updated": "Le PersonInCharge avec l'identifiant {{ param }} a été mis à jour",
-            "deleted": "Le PersonInCharge avec l'identifiant {{ param }} a été supprimé",
+            "created": "Un nouveau responsable a été créé avec l'identifiant {{ param }}",
+            "updated": "Le responsable avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le responsable avec l'identifiant {{ param }} a été supprimé",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le PersonInCharge {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer le responsable {{ id }} ?"
             },
             "detail": {
-                "title": "PersonInCharge"
+                "title": "Responsable"
             },
-            "name": "Name",
-            "firstName": "FirstName",
-            "adress": "Adress",
-            "work": "Work",
-            "phoneNumber": "PhoneNumber",
-            "mobilePhoneNumber": "MobilePhoneNumber",
-            "email": "Email",
-            "scholar": "Scholar"
+            "name": "Nom",
+            "firstName": "Prénom",
+            "adress": "Adresse",
+            "work": "Profession",
+            "phoneNumber": "Téléphone",
+            "mobilePhoneNumber": "Téléphone portable",
+            "email": "E-mail",
+            "scholar": "Écoliers"
         }
     }
 }

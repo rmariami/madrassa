@@ -2,27 +2,27 @@
     "madrassaApp": {
         "personInCharge" : {
             "home": {
-                "title": "PersonInCharges",
-                "createLabel": "Create a new PersonInCharge",
-                "createOrEditLabel": "Create or edit a PersonInCharge",
-                "search": "Search for PersonInCharge"
+                "title": "Person in charges",
+                "createLabel": "Create a new person in charge",
+                "createOrEditLabel": "Create or edit a person in charge",
+                "search": "Search for person in charge"
             },
-            "created": "A new PersonInCharge is created with identifier {{ param }}",
-            "updated": "A PersonInCharge is updated with identifier {{ param }}",
-            "deleted": "A PersonInCharge is deleted with identifier {{ param }}",
+            "created": "A new person in charge is created with identifier {{ param }}",
+            "updated": "A person in charge is updated with identifier {{ param }}",
+            "deleted": "A person in charge is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete PersonInCharge {{ id }}?"
+                "question": "Are you sure you want to delete person in charge {{ id }}?"
             },
             "detail": {
-                "title": "PersonInCharge"
+                "title": "Person in charge"
             },
             "name": "Name",
-            "firstName": "FirstName",
-            "adress": "Adress",
+            "firstName": "First name",
+            "adress": "Address",
             "work": "Work",
-            "phoneNumber": "PhoneNumber",
-            "mobilePhoneNumber": "MobilePhoneNumber",
-            "email": "Email",
+            "phoneNumber": "Phone number",
+            "mobilePhoneNumber": "Mobile phone number",
+            "email": "E-mail",
             "scholar": "Scholar"
         }
     }

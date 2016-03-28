@@ -7,9 +7,9 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
-                "personInCharge": "PersonInCharge",
+                "personInCharge": "Person in charge",
                 "scholar": "Scholar",
-                "classRoom": "ClassRoom",
+                "classRoom": "Class",
                 "teacher": "Teacher",
                 "inscription": "Inscription",
                 "wish": "Wish",

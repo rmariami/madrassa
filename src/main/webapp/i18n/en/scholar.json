@@ -3,28 +3,28 @@
         "scholar" : {
             "home": {
                 "title": "Scholars",
-                "createLabel": "Create a new Scholar",
-                "createOrEditLabel": "Create or edit a Scholar",
-                "search": "Search for Scholar"
+                "createLabel": "Create a new scholar",
+                "createOrEditLabel": "Create or edit a scholar",
+                "search": "Search for scholar"
             },
-            "created": "A new Scholar is created with identifier {{ param }}",
-            "updated": "A Scholar is updated with identifier {{ param }}",
-            "deleted": "A Scholar is deleted with identifier {{ param }}",
+            "created": "A new scholar is created with identifier {{ param }}",
+            "updated": "A scholar is updated with identifier {{ param }}",
+            "deleted": "A scholar is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Scholar {{ id }}?"
+                "question": "Are you sure you want to delete scholar {{ id }}?"
             },
             "detail": {
                 "title": "Scholar"
             },
-            "scholarNumber": "ScholarNumber",
+            "scholarNumber": "Scholar number",
             "sex": "Sex",
             "name": "Name",
-            "firstName": "FirstName",
-            "birthDate": "BirthDate",
-            "birthPlace": "BirthPlace",
+            "firstName": "First name",
+            "birthDate": "Birth date",
+            "birthPlace": "Birth place",
             "photo": "Photo",
-            "nbYearsXP": "NbYearsXP",
-            "personInCharge": "PersonInCharge"
+            "nbYearsXP": "Years of experience",
+            "personInCharge": "Person in charge"
         }
     }
 }
