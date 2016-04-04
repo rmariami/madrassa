@@ -39,9 +39,9 @@
                     <th jh-sort-by="date"><span translate="madrassaApp.inscription.date">Date</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="price"><span translate="madrassaApp.inscription.price">Price</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="statut"><span translate="madrassaApp.inscription.statut">Statut</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="classRoom.id"><span translate="madrassaApp.inscription.classRoom">classRoom</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="scholar.id"><span translate="madrassaApp.inscription.scholar">scholar</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="author.id"><span translate="madrassaApp.inscription.author">author</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="classRoomCode"><span translate="madrassaApp.inscription.classRoom">classRoom</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="scholarName"><span translate="madrassaApp.inscription.scholar">scholar</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="authorName"><span translate="madrassaApp.inscription.author">author</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -52,13 +52,13 @@
                     <td>{{inscription.price}}</td>
                     <td>{{inscription.statut}}</td>
                     <td>
-                        <a ui-sref="class-room-detail({id:inscription.classRoom.id})">{{inscription.classRoom.id}}</a>
+                        <a ui-sref="class-room-detail({id:inscription.classRoomId})">{{inscription.classRoomCode}}</a>
                     </td>
                     <td>
-                        <a ui-sref="scholar-detail({id:inscription.scholar.id})">{{inscription.scholar.id}}</a>
+                        <a ui-sref="scholar-detail({id:inscription.scholarId})">{{inscription.scholarName}}</a>
                     </td>
                     <td>
-                        {{inscription.author.id}}
+                        {{inscription.authorName}}
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

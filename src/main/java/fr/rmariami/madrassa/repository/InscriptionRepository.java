@@ -11,4 +11,7 @@ import java.util.List;
  */
 public interface InscriptionRepository extends JpaRepository<Inscription,Long> {
 
+    @Query("select inscription from Inscription inscription where inscription.author.login = ?#{principal.username}")
+    List<Inscription> findByAuthorIsCurrentUser();
+
 }

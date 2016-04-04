@@ -41,16 +41,13 @@ public class Inscription implements Serializable {
     @Column(name = "statut", nullable = false)
     private String statut;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
     private ClassRoom classRoom;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
     private Scholar scholar;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
     private User author;
 
     @OneToMany(mappedBy = "inscription")

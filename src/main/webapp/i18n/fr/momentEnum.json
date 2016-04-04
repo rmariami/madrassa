@@ -1,8 +1,9 @@
 {
     "madrassaApp": {
-        "ClassMoment" : {
+        "momentEnum" : {
             "null": "",
             "SATURDAY_MORNING": "Samedi matin",
+            "SATURDAY_AFTERNOON": "Samedi après-midi",
             "SUNDAY_MORNING": "Dimanche matin"
         }
     }

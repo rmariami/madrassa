@@ -1,5 +1,6 @@
 package fr.rmariami.madrassa.domain;
 
+import fr.rmariami.madrassa.domain.enumeration.MomentEnum;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -7,8 +8,6 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
-
-import fr.rmariami.madrassa.domain.enumeration.ClassMoment;
 
 /**
  * A Wish.
@@ -27,7 +26,7 @@ public class Wish implements Serializable {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "moment")
-    private ClassMoment moment;
+    private MomentEnum moment;
 
     @ManyToOne
     private Inscription inscription;
@@ -40,11 +39,11 @@ public class Wish implements Serializable {
         this.id = id;
     }
 
-    public ClassMoment getMoment() {
+    public MomentEnum getMoment() {
         return moment;
     }
 
-    public void setMoment(ClassMoment moment) {
+    public void setMoment(MomentEnum moment) {
         this.moment = moment;
     }
 

@@ -2,36 +2,30 @@
   "relationships": [
     {
       "relationshipId": 1,
+      "relationshipType": "many-to-one",
       "relationshipName": "classRoom",
       "otherEntityName": "classRoom",
-      "relationshipType": "one-to-one",
-      "otherEntityField": "id",
-      "ownerSide": true,
-      "otherEntityRelationshipName": "inscription"
+      "otherEntityField": "code"
     },
     {
       "relationshipId": 2,
+      "relationshipType": "many-to-one",
       "relationshipName": "scholar",
       "otherEntityName": "scholar",
-      "relationshipType": "one-to-one",
-      "otherEntityField": "id",
-      "ownerSide": true,
-      "otherEntityRelationshipName": "inscription"
+      "otherEntityField": "name"
     },
     {
       "relationshipId": 3,
+      "relationshipType": "many-to-one",
       "relationshipName": "author",
       "otherEntityName": "user",
-      "relationshipType": "one-to-one",
-      "otherEntityField": "id",
-      "ownerSide": true,
-      "otherEntityRelationshipName": "inscription"
+      "otherEntityField": "firstName"
     },
     {
       "relationshipId": 4,
+      "relationshipType": "one-to-many",
       "relationshipName": "wishs",
       "otherEntityName": "wish",
-      "relationshipType": "one-to-many",
       "otherEntityRelationshipName": "inscription"
     }
   ],
@@ -61,8 +55,9 @@
       ]
     }
   ],
-  "changelogDate": "20160327172433",
-  "dto": "no",
+  "changelogDate": "20160404083433",
+  "dto": "mapstruct",
   "pagination": "infinite-scroll",
-  "service": "no"
+  "service": "serviceImpl",
+  "entityTableName": "inscription"
 }

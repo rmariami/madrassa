@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
 
-import fr.rmariami.madrassa.domain.enumeration.ClassMoment;
+import fr.rmariami.madrassa.domain.enumeration.MomentEnum;
 
 /**
  * A ClassRoom.
@@ -40,7 +40,7 @@ public class ClassRoom implements Serializable {
     @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "moment", nullable = false)
-    private ClassMoment moment;
+    private MomentEnum moment;
 
     @NotNull
     @Column(name = "start_hour", nullable = false)
@@ -82,11 +82,11 @@ public class ClassRoom implements Serializable {
         this.name = name;
     }
 
-    public ClassMoment getMoment() {
+    public MomentEnum getMoment() {
         return moment;
     }
 
-    public void setMoment(ClassMoment moment) {
+    public void setMoment(MomentEnum moment) {
         this.moment = moment;
     }
 

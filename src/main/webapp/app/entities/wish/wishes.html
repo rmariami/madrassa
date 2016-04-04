@@ -44,7 +44,7 @@
             <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
                 <tr ng-repeat="wish in vm.wishes track by wish.id">
                     <td><a ui-sref="wish-detail({id:wish.id})">{{wish.id}}</a></td>
-                    <td translate="{{'madrassaApp.ClassMoment.' + wish.moment}}">{{wish.moment}}</td>
+                    <td translate="{{'madrassaApp.momentEnum.' + wish.moment}}">{{wish.moment}}</td>
                     <td>
                         <a ui-sref="inscription-detail({id:wish.inscription.id})">{{wish.inscription.id}}</a>
                     </td>

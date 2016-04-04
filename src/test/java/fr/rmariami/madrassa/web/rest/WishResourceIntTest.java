@@ -2,6 +2,7 @@ package fr.rmariami.madrassa.web.rest;
 
 import fr.rmariami.madrassa.MadrassaApp;
 import fr.rmariami.madrassa.domain.Wish;
+import fr.rmariami.madrassa.domain.enumeration.MomentEnum;
 import fr.rmariami.madrassa.repository.WishRepository;
 import fr.rmariami.madrassa.repository.search.WishSearchRepository;
 
@@ -30,8 +31,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import fr.rmariami.madrassa.domain.enumeration.ClassMoment;
-
 /**
  * Test class for the WishResource REST controller.
  *
@@ -44,8 +43,8 @@ import fr.rmariami.madrassa.domain.enumeration.ClassMoment;
 public class WishResourceIntTest {
 
 
-    private static final ClassMoment DEFAULT_MOMENT = ClassMoment.SATURDAY_MORNING;
-    private static final ClassMoment UPDATED_MOMENT = ClassMoment.SUNDAY_MORNING;
+    private static final MomentEnum DEFAULT_MOMENT = MomentEnum.SATURDAY_MORNING;
+    private static final MomentEnum UPDATED_MOMENT = MomentEnum.SUNDAY_MORNING;
 
     @Inject
     private WishRepository wishRepository;

@@ -35,8 +35,8 @@
     {
       "fieldId": 3,
       "fieldName": "moment",
-      "fieldType": "ClassMoment",
-      "fieldValues": "SATURDAY_MORNING,SUNDAY_MORNING",
+      "fieldType": "MomentEnum",
+      "fieldValues": "SATURDAY_MORNING,SATURDAY_AFTERNOON,SUNDAY_MORNING",
       "fieldValidateRules": [
         "required"
       ]

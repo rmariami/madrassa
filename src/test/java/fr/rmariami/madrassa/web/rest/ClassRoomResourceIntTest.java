@@ -30,7 +30,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import fr.rmariami.madrassa.domain.enumeration.ClassMoment;
+import fr.rmariami.madrassa.domain.enumeration.MomentEnum;
 
 /**
  * Test class for the ClassRoomResource REST controller.
@@ -48,8 +48,8 @@ public class ClassRoomResourceIntTest {
     private static final String DEFAULT_NAME = "AAAAA";
     private static final String UPDATED_NAME = "BBBBB";
 
-    private static final ClassMoment DEFAULT_MOMENT = ClassMoment.SATURDAY_MORNING;
-    private static final ClassMoment UPDATED_MOMENT = ClassMoment.SUNDAY_MORNING;
+    private static final MomentEnum DEFAULT_MOMENT = MomentEnum.SATURDAY_MORNING;
+    private static final MomentEnum UPDATED_MOMENT = MomentEnum.SUNDAY_MORNING;
     private static final String DEFAULT_START_HOUR = "AAAAA";
     private static final String UPDATED_START_HOUR = "BBBBB";
     private static final String DEFAULT_END_HOUR = "AAAAA";

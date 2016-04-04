@@ -2,8 +2,8 @@ enum SexEnum {
 	MAN, WOMEN
 }
 
-enum ClassMoment {
-	SATURDAY_MORNING, SUNDAY_MORNING
+enum MomentEnum {
+	SATURDAY_MORNING, SATURDAY_AFTERNOON, SUNDAY_MORNING
 }
 
 entity PersonInCharge {
@@ -30,7 +30,7 @@ entity Scholar {
 entity ClassRoom {
 	code String required,
     name String required,
-    moment ClassMoment required,
+    moment MomentEnum required,
     startHour String required,
     endHour String required
 }
@@ -47,22 +47,22 @@ entity Teacher {
 entity Inscription {
 	date ZonedDateTime required,
     price BigDecimal required,
-    statut String required
+    status String required
 }
 
 entity Wish {
-    moment ClassMoment
+    moment MomentEnum
 }
 
 
-relationship OneToOne {
-  Inscription{classRoom} to ClassRoom
+relationship ManyToOne {
+  Inscription{classRoom(code)} to ClassRoom
 }
-relationship OneToOne {
-  Inscription{scholar} to Scholar
+relationship ManyToOne {
+  Inscription{scholar(name)} to Scholar
 }
-relationship OneToOne {
-  Inscription{author} to User
+relationship ManyToOne {
+  Inscription{author(firstName)} to User
 }
 relationship OneToMany {
   Inscription{wishs} to Wish
@@ -83,5 +83,6 @@ relationship ManyToMany {
   Scholar{personInCharge(firstName)} to PersonInCharge{scholar}
 }
 
-
+dto Inscription with mapstruct
+service Inscription with serviceImpl
 paginate all with infinite-scroll

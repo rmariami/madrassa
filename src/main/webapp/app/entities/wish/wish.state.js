@@ -26,7 +26,7 @@
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('wish');
-                    $translatePartialLoader.addPart('classMoment');
+                    $translatePartialLoader.addPart('momentEnum');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
@@ -49,7 +49,7 @@
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('wish');
-                    $translatePartialLoader.addPart('classMoment');
+                    $translatePartialLoader.addPart('momentEnum');
                     return $translate.refresh();
                 }],
                 entity: ['$stateParams', 'Wish', function($stateParams, Wish) {

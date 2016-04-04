@@ -20,17 +20,17 @@
         <hr>
         <dt><span translate="madrassaApp.inscription.classRoom">classRoom</span></dt>
         <dd>
-            <a ui-sref="class-room-detail({id:vm.inscription.classRoom.id})">{{vm.inscription.classRoom.id}}</a>
+            <a ui-sref="class-room-detail({id:vm.inscription.classRoomId})">{{vm.inscription.classRoomCode}}</a>
         </dd>
         <hr>
         <dt><span translate="madrassaApp.inscription.scholar">scholar</span></dt>
         <dd>
-            <a ui-sref="scholar-detail({id:vm.inscription.scholar.id})">{{vm.inscription.scholar.id}}</a>
+            <a ui-sref="scholar-detail({id:vm.inscription.scholarId})">{{vm.inscription.scholarName}}</a>
         </dd>
         <hr>
         <dt><span translate="madrassaApp.inscription.author">author</span></dt>
         <dd>
-            {{vm.inscription.author.id}}
+            {{vm.inscription.authorName}}
         </dd>
         <hr>
     </dl>

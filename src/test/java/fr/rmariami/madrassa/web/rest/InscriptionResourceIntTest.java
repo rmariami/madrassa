@@ -3,7 +3,10 @@ package fr.rmariami.madrassa.web.rest;
 import fr.rmariami.madrassa.MadrassaApp;
 import fr.rmariami.madrassa.domain.Inscription;
 import fr.rmariami.madrassa.repository.InscriptionRepository;
+import fr.rmariami.madrassa.service.InscriptionService;
 import fr.rmariami.madrassa.repository.search.InscriptionSearchRepository;
+import fr.rmariami.madrassa.web.rest.dto.InscriptionDTO;
+import fr.rmariami.madrassa.web.rest.mapper.InscriptionMapper;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -63,6 +66,12 @@ public class InscriptionResourceIntTest {
     private InscriptionRepository inscriptionRepository;
 
     @Inject
+    private InscriptionMapper inscriptionMapper;
+
+    @Inject
+    private InscriptionService inscriptionService;
+
+    @Inject
     private InscriptionSearchRepository inscriptionSearchRepository;
 
     @Inject
@@ -79,8 +88,8 @@ public class InscriptionResourceIntTest {
     public void setup() {
         MockitoAnnotations.initMocks(this);
         InscriptionResource inscriptionResource = new InscriptionResource();
-        ReflectionTestUtils.setField(inscriptionResource, "inscriptionSearchRepository", inscriptionSearchRepository);
-        ReflectionTestUtils.setField(inscriptionResource, "inscriptionRepository", inscriptionRepository);
+        ReflectionTestUtils.setField(inscriptionResource, "inscriptionService", inscriptionService);
+        ReflectionTestUtils.setField(inscriptionResource, "inscriptionMapper", inscriptionMapper);
         this.restInscriptionMockMvc = MockMvcBuilders.standaloneSetup(inscriptionResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setMessageConverters(jacksonMessageConverter).build();
@@ -101,10 +110,11 @@ public class InscriptionResourceIntTest {
         int databaseSizeBeforeCreate = inscriptionRepository.findAll().size();
 
         // Create the Inscription
+        InscriptionDTO inscriptionDTO = inscriptionMapper.inscriptionToInscriptionDTO(inscription);
 
         restInscriptionMockMvc.perform(post("/api/inscriptions")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
-                .content(TestUtil.convertObjectToJsonBytes(inscription)))
+                .content(TestUtil.convertObjectToJsonBytes(inscriptionDTO)))
                 .andExpect(status().isCreated());
 
         // Validate the Inscription in the database
@@ -128,10 +138,11 @@ public class InscriptionResourceIntTest {
         inscription.setDate(null);
 
         // Create the Inscription, which fails.
+        InscriptionDTO inscriptionDTO = inscriptionMapper.inscriptionToInscriptionDTO(inscription);
 
         restInscriptionMockMvc.perform(post("/api/inscriptions")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
-                .content(TestUtil.convertObjectToJsonBytes(inscription)))
+                .content(TestUtil.convertObjectToJsonBytes(inscriptionDTO)))
                 .andExpect(status().isBadRequest());
 
         List<Inscription> inscriptions = inscriptionRepository.findAll();
@@ -146,10 +157,11 @@ public class InscriptionResourceIntTest {
         inscription.setPrice(null);
 
         // Create the Inscription, which fails.
+        InscriptionDTO inscriptionDTO = inscriptionMapper.inscriptionToInscriptionDTO(inscription);
 
         restInscriptionMockMvc.perform(post("/api/inscriptions")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
-                .content(TestUtil.convertObjectToJsonBytes(inscription)))
+                .content(TestUtil.convertObjectToJsonBytes(inscriptionDTO)))
                 .andExpect(status().isBadRequest());
 
         List<Inscription> inscriptions = inscriptionRepository.findAll();
@@ -164,10 +176,11 @@ public class InscriptionResourceIntTest {
         inscription.setStatut(null);
 
         // Create the Inscription, which fails.
+        InscriptionDTO inscriptionDTO = inscriptionMapper.inscriptionToInscriptionDTO(inscription);
 
         restInscriptionMockMvc.perform(post("/api/inscriptions")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
-                .content(TestUtil.convertObjectToJsonBytes(inscription)))
+                .content(TestUtil.convertObjectToJsonBytes(inscriptionDTO)))
                 .andExpect(status().isBadRequest());
 
         List<Inscription> inscriptions = inscriptionRepository.findAll();
@@ -228,10 +241,11 @@ public class InscriptionResourceIntTest {
         updatedInscription.setDate(UPDATED_DATE);
         updatedInscription.setPrice(UPDATED_PRICE);
         updatedInscription.setStatut(UPDATED_STATUT);
+        InscriptionDTO inscriptionDTO = inscriptionMapper.inscriptionToInscriptionDTO(updatedInscription);
 
         restInscriptionMockMvc.perform(put("/api/inscriptions")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
-                .content(TestUtil.convertObjectToJsonBytes(updatedInscription)))
+                .content(TestUtil.convertObjectToJsonBytes(inscriptionDTO)))
                 .andExpect(status().isOk());
 
         // Validate the Inscription in the database
