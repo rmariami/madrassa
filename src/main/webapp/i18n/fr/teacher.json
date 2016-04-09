@@ -2,27 +2,27 @@
     "madrassaApp": {
         "teacher" : {
             "home": {
-                "title": "Teachers",
-                "createLabel": "Créer un nouveau Teacher",
-                "createOrEditLabel": "Créer ou éditer un Teacher",
-                "search": "Recherche pour Teacher"
+                "title": "Enseignants",
+                "createLabel": "Ajouter un enseignant",
+                "createOrEditLabel": "Ajouter ou éditer un enseignant",
+                "search": "Rechercher un enseignant"
             },
-            "created": "Un nouveau Teacher a été créé avec l'identifiant {{ param }}",
-            "updated": "Le Teacher avec l'identifiant {{ param }} a été mis à jour",
-            "deleted": "Le Teacher avec l'identifiant {{ param }} a été supprimé",
+            "created": "Un nouvel enseignant a été ajouté avec l'identifiant {{ param }}",
+            "updated": "L'enseignant avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "L'enseignant avec l'identifiant {{ param }} a été supprimé",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Teacher {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer l'enseignant {{ id }} ?"
             },
             "detail": {
-                "title": "Teacher"
+                "title": "Enseignant"
             },
-            "name": "Name",
-            "firstName": "FirstName",
-            "adress": "Adress",
-            "phoneNumber": "PhoneNumber",
-            "mobilePhoneNumber": "MobilePhoneNumber",
-            "email": "Email",
-            "user": "User",
+            "name": "Nom",
+            "firstName": "Prénom",
+            "adress": "Adresse",
+            "phoneNumber": "Téléphone",
+            "mobilePhoneNumber": "Téléphone portable",
+            "email": "E-mail",
+            "user": "Utilisateur",
             "classes": "Classes"
         }
     }
