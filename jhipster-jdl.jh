@@ -6,6 +6,10 @@ enum MomentEnum {
 	SATURDAY_MORNING, SATURDAY_AFTERNOON, SUNDAY_MORNING
 }
 
+enum InscriptionStatusEnum {
+	PENDING, VALIDATED, CANCELED
+}
+
 entity PersonInCharge {
 	name String required,
     firstName String required,
@@ -47,7 +51,7 @@ entity Teacher {
 entity Inscription {
 	date ZonedDateTime required,
     price BigDecimal required,
-    status String required
+    status InscriptionStatusEnum required
 }
 
 entity Wish {

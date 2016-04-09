@@ -38,6 +38,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import fr.rmariami.madrassa.domain.enumeration.InscriptionStatusEnum;
 
 /**
  * Test class for the InscriptionResource REST controller.
@@ -59,8 +60,9 @@ public class InscriptionResourceIntTest {
 
     private static final BigDecimal DEFAULT_PRICE = new BigDecimal(1);
     private static final BigDecimal UPDATED_PRICE = new BigDecimal(2);
-    private static final String DEFAULT_STATUT = "AAAAA";
-    private static final String UPDATED_STATUT = "BBBBB";
+
+    private static final InscriptionStatusEnum DEFAULT_STATUS = InscriptionStatusEnum.PENDING;
+    private static final InscriptionStatusEnum UPDATED_STATUS = InscriptionStatusEnum.VALIDATED;
 
     @Inject
     private InscriptionRepository inscriptionRepository;
@@ -101,7 +103,7 @@ public class InscriptionResourceIntTest {
         inscription = new Inscription();
         inscription.setDate(DEFAULT_DATE);
         inscription.setPrice(DEFAULT_PRICE);
-        inscription.setStatut(DEFAULT_STATUT);
+        inscription.setStatus(DEFAULT_STATUS);
     }
 
     @Test
@@ -123,7 +125,7 @@ public class InscriptionResourceIntTest {
         Inscription testInscription = inscriptions.get(inscriptions.size() - 1);
         assertThat(testInscription.getDate()).isEqualTo(DEFAULT_DATE);
         assertThat(testInscription.getPrice()).isEqualTo(DEFAULT_PRICE);
-        assertThat(testInscription.getStatut()).isEqualTo(DEFAULT_STATUT);
+        assertThat(testInscription.getStatus()).isEqualTo(DEFAULT_STATUS);
 
         // Validate the Inscription in ElasticSearch
         Inscription inscriptionEs = inscriptionSearchRepository.findOne(testInscription.getId());
@@ -170,10 +172,10 @@ public class InscriptionResourceIntTest {
 
     @Test
     @Transactional
-    public void checkStatutIsRequired() throws Exception {
+    public void checkStatusIsRequired() throws Exception {
         int databaseSizeBeforeTest = inscriptionRepository.findAll().size();
         // set the field null
-        inscription.setStatut(null);
+        inscription.setStatus(null);
 
         // Create the Inscription, which fails.
         InscriptionDTO inscriptionDTO = inscriptionMapper.inscriptionToInscriptionDTO(inscription);
@@ -200,7 +202,7 @@ public class InscriptionResourceIntTest {
                 .andExpect(jsonPath("$.[*].id").value(hasItem(inscription.getId().intValue())))
                 .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE_STR)))
                 .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE.intValue())))
-                .andExpect(jsonPath("$.[*].statut").value(hasItem(DEFAULT_STATUT.toString())));
+                .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())));
     }
 
     @Test
@@ -216,7 +218,7 @@ public class InscriptionResourceIntTest {
             .andExpect(jsonPath("$.id").value(inscription.getId().intValue()))
             .andExpect(jsonPath("$.date").value(DEFAULT_DATE_STR))
             .andExpect(jsonPath("$.price").value(DEFAULT_PRICE.intValue()))
-            .andExpect(jsonPath("$.statut").value(DEFAULT_STATUT.toString()));
+            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()));
     }
 
     @Test
@@ -240,7 +242,7 @@ public class InscriptionResourceIntTest {
         updatedInscription.setId(inscription.getId());
         updatedInscription.setDate(UPDATED_DATE);
         updatedInscription.setPrice(UPDATED_PRICE);
-        updatedInscription.setStatut(UPDATED_STATUT);
+        updatedInscription.setStatus(UPDATED_STATUS);
         InscriptionDTO inscriptionDTO = inscriptionMapper.inscriptionToInscriptionDTO(updatedInscription);
 
         restInscriptionMockMvc.perform(put("/api/inscriptions")
@@ -254,7 +256,7 @@ public class InscriptionResourceIntTest {
         Inscription testInscription = inscriptions.get(inscriptions.size() - 1);
         assertThat(testInscription.getDate()).isEqualTo(UPDATED_DATE);
         assertThat(testInscription.getPrice()).isEqualTo(UPDATED_PRICE);
-        assertThat(testInscription.getStatut()).isEqualTo(UPDATED_STATUT);
+        assertThat(testInscription.getStatus()).isEqualTo(UPDATED_STATUS);
 
         // Validate the Inscription in ElasticSearch
         Inscription inscriptionEs = inscriptionSearchRepository.findOne(testInscription.getId());
@@ -297,6 +299,6 @@ public class InscriptionResourceIntTest {
             .andExpect(jsonPath("$.[*].id").value(hasItem(inscription.getId().intValue())))
             .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE_STR)))
             .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE.intValue())))
-            .andExpect(jsonPath("$.[*].statut").value(hasItem(DEFAULT_STATUT.toString())));
+            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())));
     }
 }

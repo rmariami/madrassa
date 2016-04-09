@@ -38,10 +38,10 @@
                     <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="date"><span translate="madrassaApp.inscription.date">Date</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="price"><span translate="madrassaApp.inscription.price">Price</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="statut"><span translate="madrassaApp.inscription.statut">Statut</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="status"><span translate="madrassaApp.inscription.status">Status</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="classRoomCode"><span translate="madrassaApp.inscription.classRoom">classRoom</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="scholarName"><span translate="madrassaApp.inscription.scholar">scholar</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="authorName"><span translate="madrassaApp.inscription.author">author</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="authorFirstName"><span translate="madrassaApp.inscription.author">author</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -50,7 +50,7 @@
                     <td><a ui-sref="inscription-detail({id:inscription.id})">{{inscription.id}}</a></td>
                     <td>{{inscription.date | date:'medium'}}</td>
                     <td>{{inscription.price}}</td>
-                    <td>{{inscription.statut}}</td>
+                    <td translate="{{'madrassaApp.InscriptionStatusEnum.' + inscription.status}}">{{inscription.status}}</td>
                     <td>
                         <a ui-sref="class-room-detail({id:inscription.classRoomId})">{{inscription.classRoomCode}}</a>
                     </td>
@@ -58,7 +58,7 @@
                         <a ui-sref="scholar-detail({id:inscription.scholarId})">{{inscription.scholarName}}</a>
                     </td>
                     <td>
-                        {{inscription.authorName}}
+                        {{inscription.authorFirstName}}
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

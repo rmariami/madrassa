@@ -26,6 +26,7 @@
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('inscription');
+                    $translatePartialLoader.addPart('inscriptionStatusEnum');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
@@ -48,6 +49,7 @@
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('inscription');
+                    $translatePartialLoader.addPart('inscriptionStatusEnum');
                     return $translate.refresh();
                 }],
                 entity: ['$stateParams', 'Inscription', function($stateParams, Inscription) {
@@ -73,7 +75,7 @@
                             return {
                                 date: null,
                                 price: null,
-                                statut: null,
+                                status: null,
                                 id: null
                             };
                         }

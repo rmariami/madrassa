@@ -1,0 +1,10 @@
+{
+    "madrassaApp": {
+        "InscriptionStatusEnum" : {
+            "null": "",
+            "PENDING": "Pending",
+            "VALIDATED": "Validated",
+            "CANCELED": "Canceled"
+        }
+    }
+}

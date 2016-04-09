@@ -17,7 +17,7 @@ public interface InscriptionMapper {
     @Mapping(source = "scholar.id", target = "scholarId")
     @Mapping(source = "scholar.name", target = "scholarName")
     @Mapping(source = "author.id", target = "authorId")
-    @Mapping(source = "author.firstName", target = "authorName")
+    @Mapping(source = "author.firstName", target = "authorFirstName")
     InscriptionDTO inscriptionToInscriptionDTO(Inscription inscription);
 
     List<InscriptionDTO> inscriptionsToInscriptionDTOs(List<Inscription> inscriptions);

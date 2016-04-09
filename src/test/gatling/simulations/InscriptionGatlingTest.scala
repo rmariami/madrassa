@@ -68,7 +68,7 @@ class InscriptionGatlingTest extends Simulation {
             .exec(http("Create new inscription")
             .post("/api/inscriptions")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "date":"2020-01-01T00:00:00.000Z", "price":null, "statut":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "date":"2020-01-01T00:00:00.000Z", "price":null, "status":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_inscription_url"))).exitHereIfFailed
             .pause(10)

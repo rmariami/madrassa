@@ -16,7 +16,7 @@
     <!--
         Added the entity Inscription.
     -->
-    <changeSet id="20160404083433" author="jhipster">
+    <changeSet id="6f99484b410f8169ade12928d62c8508" author="jhipster">
         <createTable tableName="inscription">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -29,7 +29,7 @@
                 <constraints nullable="false" />
             </column>
 
-            <column name="statut" type="varchar(255)">
+            <column name="status" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
 

@@ -22,8 +22,13 @@ import javax.inject.Inject;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
+import static org.elasticsearch.index.query.QueryBuilders.*;
 
 /**
  * REST controller for managing Inscription.
@@ -33,13 +38,13 @@ import java.util.Optional;
 public class InscriptionResource {
 
     private final Logger log = LoggerFactory.getLogger(InscriptionResource.class);
-
+        
     @Inject
     private InscriptionService inscriptionService;
-
+    
     @Inject
     private InscriptionMapper inscriptionMapper;
-
+    
     /**
      * POST  /inscriptions : Create a new inscription.
      *
@@ -101,7 +106,7 @@ public class InscriptionResource {
     public ResponseEntity<List<InscriptionDTO>> getAllInscriptions(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Inscriptions");
-        Page<Inscription> page = inscriptionService.findAll(pageable);
+        Page<Inscription> page = inscriptionService.findAll(pageable); 
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/inscriptions");
         return new ResponseEntity<>(inscriptionMapper.inscriptionsToInscriptionDTOs(page.getContent()), headers, HttpStatus.OK);
     }

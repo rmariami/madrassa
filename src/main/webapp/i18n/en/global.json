@@ -11,8 +11,8 @@
                 "scholar": "Scholar",
                 "classRoom": "Class",
                 "teacher": "Teacher",
-                "inscription": "Inscription",
                 "wish": "Wish",
+                "inscription": "Inscription",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

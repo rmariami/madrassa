@@ -49,7 +49,7 @@ public class ClassRoomResourceIntTest {
     private static final String UPDATED_NAME = "BBBBB";
 
     private static final MomentEnum DEFAULT_MOMENT = MomentEnum.SATURDAY_MORNING;
-    private static final MomentEnum UPDATED_MOMENT = MomentEnum.SUNDAY_MORNING;
+    private static final MomentEnum UPDATED_MOMENT = MomentEnum.SATURDAY_AFTERNOON;
     private static final String DEFAULT_START_HOUR = "AAAAA";
     private static final String UPDATED_START_HOUR = "BBBBB";
     private static final String DEFAULT_END_HOUR = "AAAAA";

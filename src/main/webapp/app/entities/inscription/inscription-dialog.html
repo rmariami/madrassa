@@ -50,13 +50,15 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" translate="madrassaApp.inscription.statut" for="field_statut">Statut</label>
-            <input type="text" class="form-control" name="statut" id="field_statut"
-                    ng-model="vm.inscription.statut"
-                    required />
-            <div ng-show="editForm.statut.$invalid">
+            <label class="control-label" translate="madrassaApp.inscription.status" for="field_status">Status</label>
+            <select class="form-control" name="status" ng-model="vm.inscription.status" id="field_status" required>
+                <option value="PENDING" translate="madrassaApp.InscriptionStatusEnum.PENDING">PENDING</option>
+                <option value="VALIDATED" translate="madrassaApp.InscriptionStatusEnum.VALIDATED">VALIDATED</option>
+                <option value="CANCELED" translate="madrassaApp.InscriptionStatusEnum.CANCELED">CANCELED</option>
+            </select>
+            <div ng-show="editForm.status.$invalid">
                 <p class="help-block"
-                    ng-show="editForm.statut.$error.required" translate="entity.validation.required">
+                    ng-show="editForm.status.$error.required" translate="entity.validation.required">
                     This field is required.
                 </p>
             </div>
@@ -76,7 +78,7 @@
         </div>
         <div class="form-group">
             <label translate="madrassaApp.inscription.author" for="field_author">author</label>
-            <select class="form-control" id="field_author" name="author" ng-model="vm.inscription.authorId" ng-options="user.id as user.name for user in vm.users">
+            <select class="form-control" id="field_author" name="author" ng-model="vm.inscription.authorId" ng-options="user.id as user.firstName for user in vm.users">
                 <option value=""></option>
             </select>
         </div>

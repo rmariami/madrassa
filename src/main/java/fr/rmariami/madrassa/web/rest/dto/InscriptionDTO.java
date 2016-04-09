@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
 
+import fr.rmariami.madrassa.domain.enumeration.InscriptionStatusEnum;
 
 /**
  * A DTO for the Inscription entity.
@@ -25,7 +26,7 @@ public class InscriptionDTO implements Serializable {
 
 
     @NotNull
-    private String statut;
+    private InscriptionStatusEnum status;
 
 
     private Long classRoomId;
@@ -38,7 +39,7 @@ public class InscriptionDTO implements Serializable {
 
     private Long authorId;
 
-    private String authorName;
+    private String authorFirstName;
 
     public Long getId() {
         return id;
@@ -61,12 +62,12 @@ public class InscriptionDTO implements Serializable {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
-    public String getStatut() {
-        return statut;
+    public InscriptionStatusEnum getStatus() {
+        return status;
     }
 
-    public void setStatut(String statut) {
-        this.statut = statut;
+    public void setStatus(InscriptionStatusEnum status) {
+        this.status = status;
     }
 
     public Long getClassRoomId() {
@@ -109,12 +110,12 @@ public class InscriptionDTO implements Serializable {
         this.authorId = userId;
     }
 
-    public String getAuthorName() {
-        return authorName;
+    public String getAuthorFirstName() {
+        return authorFirstName;
     }
 
-    public void setAuthorName(String userName) {
-        this.authorName = userName;
+    public void setAuthorFirstName(String userFirstName) {
+        this.authorFirstName = userFirstName;
     }
 
     @Override
@@ -144,7 +145,7 @@ public class InscriptionDTO implements Serializable {
             "id=" + id +
             ", date='" + date + "'" +
             ", price='" + price + "'" +
-            ", statut='" + statut + "'" +
+            ", status='" + status + "'" +
             '}';
     }
 }

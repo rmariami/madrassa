@@ -1,6 +1,6 @@
 {
     "madrassaApp": {
-        "momentEnum" : {
+        "MomentEnum" : {
             "null": "",
             "SATURDAY_MORNING": "Saturday morning",
             "SATURDAY_AFTERNOON": "Saturday afternoon",

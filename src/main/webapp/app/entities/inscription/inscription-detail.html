@@ -13,9 +13,9 @@
             <span>{{vm.inscription.price}}<span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.inscription.statut">Statut</dt></dt>
+        <dt><span translate="madrassaApp.inscription.status">Status</dt></dt>
         <dd>
-            <span>{{vm.inscription.statut}}<span>
+            <span translate="{{'madrassaApp.InscriptionStatusEnum.' + vm.inscription.status}}">{{vm.inscription.status}}</span>
         </dd>
         <hr>
         <dt><span translate="madrassaApp.inscription.classRoom">classRoom</span></dt>
@@ -30,7 +30,7 @@
         <hr>
         <dt><span translate="madrassaApp.inscription.author">author</span></dt>
         <dd>
-            {{vm.inscription.authorName}}
+            {{vm.inscription.authorFirstName}}
         </dd>
         <hr>
     </dl>

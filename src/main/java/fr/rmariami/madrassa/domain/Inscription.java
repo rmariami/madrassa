@@ -14,6 +14,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
 
+import fr.rmariami.madrassa.domain.enumeration.InscriptionStatusEnum;
+
 /**
  * A Inscription.
  */
@@ -38,8 +40,9 @@ public class Inscription implements Serializable {
     private BigDecimal price;
 
     @NotNull
-    @Column(name = "statut", nullable = false)
-    private String statut;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private InscriptionStatusEnum status;
 
     @ManyToOne
     private ClassRoom classRoom;
@@ -79,12 +82,12 @@ public class Inscription implements Serializable {
         this.price = price;
     }
 
-    public String getStatut() {
-        return statut;
+    public InscriptionStatusEnum getStatus() {
+        return status;
     }
 
-    public void setStatut(String statut) {
-        this.statut = statut;
+    public void setStatus(InscriptionStatusEnum status) {
+        this.status = status;
     }
 
     public ClassRoom getClassRoom() {
@@ -145,7 +148,7 @@ public class Inscription implements Serializable {
             "id=" + id +
             ", date='" + date + "'" +
             ", price='" + price + "'" +
-            ", statut='" + statut + "'" +
+            ", status='" + status + "'" +
             '}';
     }
 }
