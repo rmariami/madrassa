@@ -7,6 +7,14 @@
       "relationshipType": "many-to-many",
       "otherEntityField": "firstName",
       "ownerSide": true
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "classes",
+      "otherEntityName": "classRoom",
+      "relationshipType": "many-to-many",
+      "ownerSide": false,
+      "otherEntityRelationshipName": "scholars"
     }
   ],
   "fields": [

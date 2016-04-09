@@ -5,12 +5,13 @@
         .module('madrassaApp')
         .controller('ScholarDialogController', ScholarDialogController);
 
-    ScholarDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Scholar', 'PersonInCharge'];
+    ScholarDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Scholar', 'PersonInCharge', 'ClassRoom'];
 
-    function ScholarDialogController ($scope, $stateParams, $uibModalInstance, DataUtils, entity, Scholar, PersonInCharge) {
+    function ScholarDialogController ($scope, $stateParams, $uibModalInstance, DataUtils, entity, Scholar, PersonInCharge, ClassRoom) {
         var vm = this;
         vm.scholar = entity;
         vm.personincharges = PersonInCharge.query();
+        vm.classrooms = ClassRoom.query();
         vm.load = function(id) {
             Scholar.get({id : id}, function(result) {
                 vm.scholar = result;

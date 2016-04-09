@@ -121,7 +121,7 @@ public class ClassRoomResource {
     @Timed
     public ResponseEntity<ClassRoom> getClassRoom(@PathVariable Long id) {
         log.debug("REST request to get ClassRoom : {}", id);
-        ClassRoom classRoom = classRoomRepository.findOne(id);
+        ClassRoom classRoom = classRoomRepository.findOneWithEagerRelationships(id);
         return Optional.ofNullable(classRoom)
             .map(result -> new ResponseEntity<>(
                 result,

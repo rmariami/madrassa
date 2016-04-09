@@ -5,9 +5,9 @@
         .module('madrassaApp')
         .controller('ScholarDetailController', ScholarDetailController);
 
-    ScholarDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'DataUtils', 'entity', 'Scholar', 'PersonInCharge'];
+    ScholarDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'DataUtils', 'entity', 'Scholar', 'PersonInCharge', 'ClassRoom'];
 
-    function ScholarDetailController($scope, $rootScope, $stateParams, DataUtils, entity, Scholar, PersonInCharge) {
+    function ScholarDetailController($scope, $rootScope, $stateParams, DataUtils, entity, Scholar, PersonInCharge, ClassRoom) {
         var vm = this;
         vm.scholar = entity;
         vm.load = function (id) {

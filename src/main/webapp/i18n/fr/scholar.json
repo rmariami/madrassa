@@ -24,7 +24,8 @@
             "birthPlace": "Lieu de naissance",
             "photo": "Photo",
             "nbYearsXP": "Nombre d'années d'expérience",
-            "personInCharge": "Responsable légale"
+            "personInCharge": "Responsable légale",
+            "classes": "Classes"
         }
     }
 }

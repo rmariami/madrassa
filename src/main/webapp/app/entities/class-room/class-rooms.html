@@ -41,7 +41,6 @@
                     <th jh-sort-by="moment"><span translate="madrassaApp.classRoom.moment">Moment</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="startHour"><span translate="madrassaApp.classRoom.startHour">StartHour</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="endHour"><span translate="madrassaApp.classRoom.endHour">EndHour</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="scholars.id"><span translate="madrassaApp.classRoom.scholars">scholars</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -53,9 +52,6 @@
                     <td translate="{{'madrassaApp.MomentEnum.' + classRoom.moment}}">{{classRoom.moment}}</td>
                     <td>{{classRoom.startHour}}</td>
                     <td>{{classRoom.endHour}}</td>
-                    <td>
-                        <a ui-sref="scholar-detail({id:classRoom.scholars.id})">{{classRoom.scholars.id}}</a>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

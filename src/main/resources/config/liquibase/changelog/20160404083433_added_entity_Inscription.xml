@@ -16,7 +16,7 @@
     <!--
         Added the entity Inscription.
     -->
-    <changeSet id="6f99484b410f8169ade12928d62c8508" author="jhipster">
+    <changeSet id="20160404083433" author="jhipster">
         <createTable tableName="inscription">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -24,22 +24,22 @@
             <column name="date" type="timestamp">
                 <constraints nullable="false" />
             </column>
-
+            
             <column name="price" type="decimal(10,2)">
                 <constraints nullable="false" />
             </column>
-
+            
             <column name="status" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
-
+            
             <column name="class_room_id" type="bigint"/>
             <column name="scholar_id" type="bigint"/>
             <column name="author_id" type="bigint"/>
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
         <dropDefaultValue tableName="inscription" columnName="date" columnDataType="datetime"/>
-
+        
         <addForeignKeyConstraint baseColumnNames="class_room_id"
                                  baseTableName="inscription"
                                  constraintName="fk_inscription_classroom_id"

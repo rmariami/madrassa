@@ -55,8 +55,12 @@ public class ClassRoom implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Teacher> teachers = new HashSet<>();
 
-    @ManyToOne
-    private Scholar scholars;
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "class_room_scholars",
+               joinColumns = @JoinColumn(name="class_rooms_id", referencedColumnName="ID"),
+               inverseJoinColumns = @JoinColumn(name="scholars_id", referencedColumnName="ID"))
+    private Set<Scholar> scholars = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -114,12 +118,12 @@ public class ClassRoom implements Serializable {
         this.teachers = teachers;
     }
 
-    public Scholar getScholars() {
+    public Set<Scholar> getScholars() {
         return scholars;
     }
 
-    public void setScholars(Scholar scholar) {
-        this.scholars = scholar;
+    public void setScholars(Set<Scholar> scholars) {
+        this.scholars = scholars;
     }
 
     @Override

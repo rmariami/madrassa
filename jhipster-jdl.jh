@@ -79,8 +79,8 @@ relationship OneToOne {
 relationship OneToMany {
   ClassRoom{teacher} to Teacher{classes(code)}
 }
-relationship ManyToOne {
-  ClassRoom{scholars} to Scholar
+relationship ManyToMany {
+  ClassRoom{scholars(name)} to Scholar{classes}
 }
 
 relationship ManyToMany {

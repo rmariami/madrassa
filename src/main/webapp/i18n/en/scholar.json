@@ -24,7 +24,8 @@
             "birthPlace": "Birth place",
             "photo": "Photo",
             "nbYearsXP": "Years of experience",
-            "personInCharge": "Person in charge"
+            "personInCharge": "Person in charge",
+            "classes": "Classes"
         }
     }
 }

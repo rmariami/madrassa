@@ -30,7 +30,9 @@
         <hr>
         <dt><span translate="madrassaApp.classRoom.scholars">scholars</span></dt>
         <dd>
-            <a ui-sref="scholar-detail({id:vm.classRoom.scholars.id})">{{vm.classRoom.scholars.id}}</a>
+            <span ng-repeat="scholars in vm.classRoom.scholars">
+                <a ui-sref="scholar-detail({id: {{scholars.id}}})">{{scholars.firstName}} {{scholars.name}}</a>{{$last ? '' : ', '}}
+            </span>
         </dd>
         <hr>
     </dl>

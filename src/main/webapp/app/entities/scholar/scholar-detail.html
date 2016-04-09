@@ -47,7 +47,7 @@
         <dt><span translate="madrassaApp.scholar.personInCharge">personInCharge</span></dt>
         <dd>
             <span ng-repeat="personInCharge in vm.scholar.personInCharges">
-                <a ui-sref="person-in-charge-detail({id: {{personInCharge.id}}})">{{personInCharge.firstName}}</a>{{$last ? '' : ', '}}
+                <a ui-sref="person-in-charge-detail({id: {{personInCharge.id}}})">{{personInCharge.firstName}} {{personInCharge.name}}</a>{{$last ? '' : ', '}}
             </span>
         </dd>
         <hr>

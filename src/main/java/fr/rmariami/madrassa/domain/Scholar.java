@@ -1,5 +1,6 @@
 package fr.rmariami.madrassa.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -57,7 +58,7 @@ public class Scholar implements Serializable {
     @Column(name = "photo")
     private byte[] photo;
 
-    @Column(name = "photo_content_type")    
+    @Column(name = "photo_content_type")
     private String photoContentType;
 
     @NotNull
@@ -70,6 +71,11 @@ public class Scholar implements Serializable {
                joinColumns = @JoinColumn(name="scholars_id", referencedColumnName="ID"),
                inverseJoinColumns = @JoinColumn(name="person_in_charges_id", referencedColumnName="ID"))
     private Set<PersonInCharge> personInCharges = new HashSet<>();
+
+    @ManyToMany(mappedBy = "scholars")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<ClassRoom> classes = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -157,6 +163,14 @@ public class Scholar implements Serializable {
 
     public void setPersonInCharges(Set<PersonInCharge> personInCharges) {
         this.personInCharges = personInCharges;
+    }
+
+    public Set<ClassRoom> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Set<ClassRoom> classRooms) {
+        this.classes = classRooms;
     }
 
     @Override

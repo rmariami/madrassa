@@ -78,9 +78,7 @@
 
         <div class="form-group">
             <label translate="madrassaApp.classRoom.scholars" for="field_scholars">scholars</label>
-            <select class="form-control" id="field_scholars" name="scholars" ng-model="vm.classRoom.scholars" ng-options="scholar as scholar.id for scholar in vm.scholars track by scholar.id">
-                <option value=""></option>
-            </select>
+            <select class="form-control" id="field_scholars" multiple name="scholars" ng-model="vm.classRoom.scholarss" ng-options="scholar as scholar.name for scholar in vm.scholars track by scholar.id"></select>
         </div>
     </div>
     <div class="modal-footer">
