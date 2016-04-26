@@ -5,20 +5,19 @@
         .module('madrassaApp')
         .controller('InscriptionDialogController', InscriptionDialogController);
 
-    InscriptionDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Inscription', 'ClassRoom', 'Scholar', 'User', 'Wish'];
+    InscriptionDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Inscription', 'ClassRoom', 'Scholar', 'User', 'Wish'];
 
-    function InscriptionDialogController ($scope, $stateParams, $uibModalInstance, entity, Inscription, ClassRoom, Scholar, User, Wish) {
+    function InscriptionDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Inscription, ClassRoom, Scholar, User, Wish) {
         var vm = this;
         vm.inscription = entity;
         vm.classrooms = ClassRoom.query();
         vm.scholars = Scholar.query();
         vm.users = User.query();
-        vm.wishs = Wish.query();
-        vm.load = function(id) {
-            Inscription.get({id : id}, function(result) {
-                vm.inscription = result;
-            });
-        };
+        vm.wishes = Wish.query();
+
+        $timeout(function (){
+            angular.element('.form-group:eq(1)>input').focus();
+        });
 
         var onSaveSuccess = function (result) {
             $scope.$emit('madrassaApp:inscriptionUpdate', result);

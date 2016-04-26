@@ -163,4 +163,8 @@ public class PersonInCharge implements Serializable {
             ", email='" + email + "'" +
             '}';
     }
+
+    public String getFullName() {
+        return firstName + ' ' + name;
+    }
 }

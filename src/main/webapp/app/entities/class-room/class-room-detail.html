@@ -1,34 +1,34 @@
 
 <div>
-    <h2><span translate="madrassaApp.classRoom.detail.title">ClassRoom</span> {{vm.classRoom.id}}</h2>
+    <h2><span translate="madrassaApp.classRoom.detail.title">Class Room</span> {{vm.classRoom.id}}</h2>
     <hr>
     <dl class="dl-horizontal">
-        <dt><span translate="madrassaApp.classRoom.code">Code</dt></dt>
+        <dt><span translate="madrassaApp.classRoom.code">Code</span></dt>
         <dd>
-            <span>{{vm.classRoom.code}}<span>
+            <span>{{vm.classRoom.code}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.classRoom.name">Name</dt></dt>
+        <dt><span translate="madrassaApp.classRoom.name">Name</span></dt>
         <dd>
-            <span>{{vm.classRoom.name}}<span>
+            <span>{{vm.classRoom.name}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.classRoom.moment">Moment</dt></dt>
+        <dt><span translate="madrassaApp.classRoom.moment">Moment</span></dt>
         <dd>
             <span translate="{{'madrassaApp.MomentEnum.' + vm.classRoom.moment}}">{{vm.classRoom.moment}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.classRoom.startHour">StartHour</dt></dt>
+        <dt><span translate="madrassaApp.classRoom.startHour">Start Hour</span></dt>
         <dd>
-            <span>{{vm.classRoom.startHour}}<span>
+            <span>{{vm.classRoom.startHour}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.classRoom.endHour">EndHour</dt></dt>
+        <dt><span translate="madrassaApp.classRoom.endHour">End Hour</span></dt>
         <dd>
-            <span>{{vm.classRoom.endHour}}<span>
+            <span>{{vm.classRoom.endHour}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.classRoom.scholars">scholars</span></dt>
+        <dt><span translate="madrassaApp.classRoom.scholars">Scholars</span></dt>
         <dd>
             <span ng-repeat="scholars in vm.classRoom.scholars">
                 <a ui-sref="scholar-detail({id: {{scholars.id}}})">{{scholars.firstName}} {{scholars.name}}</a>{{$last ? '' : ', '}}

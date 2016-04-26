@@ -5,18 +5,17 @@
         .module('madrassaApp')
         .controller('TeacherDialogController', TeacherDialogController);
 
-    TeacherDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Teacher', 'User', 'ClassRoom'];
+    TeacherDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Teacher', 'User', 'ClassRoom'];
 
-    function TeacherDialogController ($scope, $stateParams, $uibModalInstance, $q, entity, Teacher, User, ClassRoom) {
+    function TeacherDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Teacher, User, ClassRoom) {
         var vm = this;
         vm.teacher = entity;
         vm.users = User.query();
         vm.classrooms = ClassRoom.query();
-        vm.load = function(id) {
-            Teacher.get({id : id}, function(result) {
-                vm.teacher = result;
-            });
-        };
+
+        $timeout(function (){
+            angular.element('.form-group:eq(1)>input').focus();
+        });
 
         var onSaveSuccess = function (result) {
             $scope.$emit('madrassaApp:teacherUpdate', result);

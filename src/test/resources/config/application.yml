@@ -11,6 +11,8 @@
 # ===================================================================
 
 spring:
+    application:
+        name: madrassa
     datasource:
         url: jdbc:h2:mem:madrassa;DB_CLOSE_DELAY=-1
         name:
@@ -83,3 +85,4 @@ jhipster:
         contactEmail:
         license:
         licenseUrl:
+        enabled: false

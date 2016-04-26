@@ -208,4 +208,8 @@ public class Scholar implements Serializable {
             ", nbYearsXP='" + nbYearsXP + "'" +
             '}';
     }
+
+    public String getFullName() {
+        return firstName + ' ' + name;
+    }
 }

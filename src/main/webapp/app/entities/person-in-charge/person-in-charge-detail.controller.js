@@ -10,11 +10,7 @@
     function PersonInChargeDetailController($scope, $rootScope, $stateParams, entity, PersonInCharge, Scholar) {
         var vm = this;
         vm.personInCharge = entity;
-        vm.load = function (id) {
-            PersonInCharge.get({id: id}, function(result) {
-                vm.personInCharge = result;
-            });
-        };
+        
         var unsubscribe = $rootScope.$on('madrassaApp:personInChargeUpdate', function(event, result) {
             vm.personInCharge = result;
         });

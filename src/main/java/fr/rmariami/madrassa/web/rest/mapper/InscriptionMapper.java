@@ -25,7 +25,7 @@ public interface InscriptionMapper {
     @Mapping(source = "classRoomId", target = "classRoom")
     @Mapping(source = "scholarId", target = "scholar")
     @Mapping(source = "authorId", target = "author")
-    @Mapping(target = "wishss", ignore = true)
+    @Mapping(target = "wishs", ignore = true)
     Inscription inscriptionDTOToInscription(InscriptionDTO inscriptionDTO);
 
     List<Inscription> inscriptionDTOsToInscriptions(List<InscriptionDTO> inscriptionDTOs);

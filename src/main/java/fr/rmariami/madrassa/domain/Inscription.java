@@ -56,7 +56,7 @@ public class Inscription implements Serializable {
     @OneToMany(mappedBy = "inscription")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Wish> wishss = new HashSet<>();
+    private Set<Wish> wishs = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -114,12 +114,12 @@ public class Inscription implements Serializable {
         this.author = user;
     }
 
-    public Set<Wish> getWishss() {
-        return wishss;
+    public Set<Wish> getWishs() {
+        return wishs;
     }
 
-    public void setWishss(Set<Wish> wishs) {
-        this.wishss = wishs;
+    public void setWishs(Set<Wish> wishes) {
+        this.wishs = wishes;
     }
 
     @Override

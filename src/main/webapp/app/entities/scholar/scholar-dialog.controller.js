@@ -5,18 +5,17 @@
         .module('madrassaApp')
         .controller('ScholarDialogController', ScholarDialogController);
 
-    ScholarDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Scholar', 'PersonInCharge', 'ClassRoom'];
+    ScholarDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Scholar', 'PersonInCharge', 'ClassRoom'];
 
-    function ScholarDialogController ($scope, $stateParams, $uibModalInstance, DataUtils, entity, Scholar, PersonInCharge, ClassRoom) {
+    function ScholarDialogController ($timeout, $scope, $stateParams, $uibModalInstance, DataUtils, entity, Scholar, PersonInCharge, ClassRoom) {
         var vm = this;
         vm.scholar = entity;
         vm.personincharges = PersonInCharge.query();
         vm.classrooms = ClassRoom.query();
-        vm.load = function(id) {
-            Scholar.get({id : id}, function(result) {
-                vm.scholar = result;
-            });
-        };
+
+        $timeout(function (){
+            angular.element('.form-group:eq(1)>input').focus();
+        });
 
         var onSaveSuccess = function (result) {
             $scope.$emit('madrassaApp:scholarUpdate', result);

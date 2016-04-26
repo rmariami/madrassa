@@ -1,6 +1,5 @@
 package fr.rmariami.madrassa.domain;
 
-import fr.rmariami.madrassa.domain.enumeration.MomentEnum;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -8,6 +7,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
+
+import fr.rmariami.madrassa.domain.enumeration.MomentEnum;
 
 /**
  * A Wish.

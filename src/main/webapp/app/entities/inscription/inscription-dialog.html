@@ -8,7 +8,7 @@
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group">
+        <div class="form-group" ng-show="vm.inscription.id">
             <label for="id" translate="global.field.id">ID</label>
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.inscription.id" readonly />
@@ -65,19 +65,19 @@
         </div>
 
         <div class="form-group">
-            <label translate="madrassaApp.inscription.classRoom" for="field_classRoom">classRoom</label>
+            <label translate="madrassaApp.inscription.classRoom" for="field_classRoom">Class Room</label>
             <select class="form-control" id="field_classRoom" name="classRoom" ng-model="vm.inscription.classRoomId" ng-options="classRoom.id as classRoom.code for classRoom in vm.classrooms">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
-            <label translate="madrassaApp.inscription.scholar" for="field_scholar">scholar</label>
-            <select class="form-control" id="field_scholar" name="scholar" ng-model="vm.inscription.scholarId" ng-options="scholar.id as scholar.name for scholar in vm.scholars">
+            <label translate="madrassaApp.inscription.scholar" for="field_scholar">Scholar</label>
+            <select class="form-control" id="field_scholar" name="scholar" ng-model="vm.inscription.scholarId" ng-options="scholar.id as scholar.fullName for scholar in vm.scholars">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
-            <label translate="madrassaApp.inscription.author" for="field_author">author</label>
+            <label translate="madrassaApp.inscription.author" for="field_author">Author</label>
             <select class="form-control" id="field_author" name="author" ng-model="vm.inscription.authorId" ng-options="user.id as user.firstName for user in vm.users">
                 <option value=""></option>
             </select>

@@ -16,7 +16,7 @@
     <!--
         Added the entity PersonInCharge.
     -->
-    <changeSet id="20160327172429" author="jhipster">
+    <changeSet id="20160327172429-1" author="jhipster">
         <createTable tableName="person_in_charge">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>

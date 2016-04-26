@@ -4,11 +4,11 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myClassRoomLabel" translate="madrassaApp.classRoom.home.createOrEditLabel">Create or edit a ClassRoom</h4>
+        <h4 class="modal-title" id="myClassRoomLabel" translate="madrassaApp.classRoom.home.createOrEditLabel">Create or edit a Class Room</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group">
+        <div class="form-group" ng-show="vm.classRoom.id">
             <label for="id" translate="global.field.id">ID</label>
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.classRoom.id" readonly />
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" translate="madrassaApp.classRoom.startHour" for="field_startHour">StartHour</label>
+            <label class="control-label" translate="madrassaApp.classRoom.startHour" for="field_startHour">Start Hour</label>
             <input type="text" class="form-control" name="startHour" id="field_startHour"
                     ng-model="vm.classRoom.startHour"
                     required />
@@ -64,7 +64,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" translate="madrassaApp.classRoom.endHour" for="field_endHour">EndHour</label>
+            <label class="control-label" translate="madrassaApp.classRoom.endHour" for="field_endHour">End Hour</label>
             <input type="text" class="form-control" name="endHour" id="field_endHour"
                     ng-model="vm.classRoom.endHour"
                     required />
@@ -77,8 +77,8 @@
         </div>
 
         <div class="form-group">
-            <label translate="madrassaApp.classRoom.scholars" for="field_scholars">scholars</label>
-            <select class="form-control" id="field_scholars" multiple name="scholars" ng-model="vm.classRoom.scholarss" ng-options="scholar as scholar.name for scholar in vm.scholars track by scholar.id"></select>
+            <label translate="madrassaApp.classRoom.scholars" for="field_scholars">Scholars</label>
+            <select class="form-control" id="field_scholars" multiple name="scholars" ng-model="vm.classRoom.scholars" ng-options="scholar as scholar.fullName for scholar in vm.scholars track by scholar.id"></select>
         </div>
     </div>
     <div class="modal-footer">

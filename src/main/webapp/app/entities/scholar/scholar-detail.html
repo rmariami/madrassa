@@ -3,48 +3,48 @@
     <h2><span translate="madrassaApp.scholar.detail.title">Scholar</span> {{vm.scholar.id}}</h2>
     <hr>
     <dl class="dl-horizontal">
-        <dt><span translate="madrassaApp.scholar.scholarNumber">ScholarNumber</dt></dt>
+        <dt><span translate="madrassaApp.scholar.scholarNumber">Scholar Number</span></dt>
         <dd>
-            <span>{{vm.scholar.scholarNumber}}<span>
+            <span>{{vm.scholar.scholarNumber}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.scholar.sex">Sex</dt></dt>
+        <dt><span translate="madrassaApp.scholar.sex">Sex</span></dt>
         <dd>
             <span translate="{{'madrassaApp.SexEnum.' + vm.scholar.sex}}">{{vm.scholar.sex}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.scholar.name">Name</dt></dt>
+        <dt><span translate="madrassaApp.scholar.name">Name</span></dt>
         <dd>
-            <span>{{vm.scholar.name}}<span>
+            <span>{{vm.scholar.name}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.scholar.firstName">FirstName</dt></dt>
+        <dt><span translate="madrassaApp.scholar.firstName">First Name</span></dt>
         <dd>
-            <span>{{vm.scholar.firstName}}<span>
+            <span>{{vm.scholar.firstName}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.scholar.birthDate">BirthDate</dt></dt>
+        <dt><span translate="madrassaApp.scholar.birthDate">Birth Date</span></dt>
         <dd>
             <span>{{vm.scholar.birthDate | date:'medium'}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.scholar.birthPlace">BirthPlace</dt></dt>
+        <dt><span translate="madrassaApp.scholar.birthPlace">Birth Place</span></dt>
         <dd>
-            <span>{{vm.scholar.birthPlace}}<span>
+            <span>{{vm.scholar.birthPlace}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.scholar.photo">Photo</dt></dt>
+        <dt><span translate="madrassaApp.scholar.photo">Photo</span></dt>
         <dd>
             <img data-ng-src="{{'data:' + vm.scholar.photoContentType + ';base64,' + vm.scholar.photo}}" style="max-width: 100%;" ng-if="vm.scholar.photo"/>
             <div>{{vm.scholar.photoContentType}}, {{vm.byteSize(vm.scholar.photo)}}</div>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.scholar.nbYearsXP">NbYearsXP</dt></dt>
+        <dt><span translate="madrassaApp.scholar.nbYearsXP">Nb Years Xp</span></dt>
         <dd>
-            <span>{{vm.scholar.nbYearsXP}}<span>
+            <span>{{vm.scholar.nbYearsXP}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.scholar.personInCharge">personInCharge</span></dt>
+        <dt><span translate="madrassaApp.scholar.personInCharge">Person In Charge</span></dt>
         <dd>
             <span ng-repeat="personInCharge in vm.scholar.personInCharges">
                 <a ui-sref="person-in-charge-detail({id: {{personInCharge.id}}})">{{personInCharge.firstName}} {{personInCharge.name}}</a>{{$last ? '' : ', '}}

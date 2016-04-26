@@ -1,6 +1,6 @@
 {
   "generator-jhipster": {
-    "jhipsterVersion": "3.0.0",
+    "jhipsterVersion": "3.1.0",
     "baseName": "madrassa",
     "packageName": "fr.rmariami.madrassa",
     "packageFolder": "fr/rmariami/madrassa",
@@ -27,6 +27,7 @@
     "languages": [
       "fr",
       "en"
-    ]
+    ],
+    "jhiPrefix": "jhi"
   }
 }

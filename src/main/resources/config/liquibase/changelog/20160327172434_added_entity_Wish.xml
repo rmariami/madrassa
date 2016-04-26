@@ -16,7 +16,7 @@
     <!--
         Added the entity Wish.
     -->
-    <changeSet id="20160327172434" author="jhipster">
+    <changeSet id="20160327172434-1" author="jhipster">
         <createTable tableName="wish">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -29,11 +29,5 @@
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
         
-        <addForeignKeyConstraint baseColumnNames="inscription_id"
-                                 baseTableName="wish"
-                                 constraintName="fk_wish_inscription_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="inscription"/>
-
     </changeSet>
 </databaseChangeLog>

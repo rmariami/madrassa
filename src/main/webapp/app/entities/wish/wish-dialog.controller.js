@@ -5,17 +5,16 @@
         .module('madrassaApp')
         .controller('WishDialogController', WishDialogController);
 
-    WishDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Wish', 'Inscription'];
+    WishDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Wish', 'Inscription'];
 
-    function WishDialogController ($scope, $stateParams, $uibModalInstance, entity, Wish, Inscription) {
+    function WishDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Wish, Inscription) {
         var vm = this;
         vm.wish = entity;
         vm.inscriptions = Inscription.query();
-        vm.load = function(id) {
-            Wish.get({id : id}, function(result) {
-                vm.wish = result;
-            });
-        };
+
+        $timeout(function (){
+            angular.element('.form-group:eq(1)>input').focus();
+        });
 
         var onSaveSuccess = function (result) {
             $scope.$emit('madrassaApp:wishUpdate', result);

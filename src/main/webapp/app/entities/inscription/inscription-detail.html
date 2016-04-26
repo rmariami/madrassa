@@ -3,32 +3,32 @@
     <h2><span translate="madrassaApp.inscription.detail.title">Inscription</span> {{vm.inscription.id}}</h2>
     <hr>
     <dl class="dl-horizontal">
-        <dt><span translate="madrassaApp.inscription.date">Date</dt></dt>
+        <dt><span translate="madrassaApp.inscription.date">Date</span></dt>
         <dd>
             <span>{{vm.inscription.date | date:'medium'}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.inscription.price">Price</dt></dt>
+        <dt><span translate="madrassaApp.inscription.price">Price</span></dt>
         <dd>
-            <span>{{vm.inscription.price}}<span>
+            <span>{{vm.inscription.price}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.inscription.status">Status</dt></dt>
+        <dt><span translate="madrassaApp.inscription.status">Status</span></dt>
         <dd>
             <span translate="{{'madrassaApp.InscriptionStatusEnum.' + vm.inscription.status}}">{{vm.inscription.status}}</span>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.inscription.classRoom">classRoom</span></dt>
+        <dt><span translate="madrassaApp.inscription.classRoom">Class Room</span></dt>
         <dd>
             <a ui-sref="class-room-detail({id:vm.inscription.classRoomId})">{{vm.inscription.classRoomCode}}</a>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.inscription.scholar">scholar</span></dt>
+        <dt><span translate="madrassaApp.inscription.scholar">Scholar</span></dt>
         <dd>
             <a ui-sref="scholar-detail({id:vm.inscription.scholarId})">{{vm.inscription.scholarName}}</a>
         </dd>
         <hr>
-        <dt><span translate="madrassaApp.inscription.author">author</span></dt>
+        <dt><span translate="madrassaApp.inscription.author">Author</span></dt>
         <dd>
             {{vm.inscription.authorFirstName}}
         </dd>

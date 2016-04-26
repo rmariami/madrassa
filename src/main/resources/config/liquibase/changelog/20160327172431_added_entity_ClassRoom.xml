@@ -16,7 +16,7 @@
     <!--
         Added the entity ClassRoom.
     -->
-    <changeSet id="20160327172431" author="jhipster">
+    <changeSet id="20160327172431-1" author="jhipster">
         <createTable tableName="class_room">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -24,26 +24,27 @@
             <column name="code" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
-
+            
             <column name="name" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
-
+            
             <column name="moment" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
-
+            
             <column name="start_hour" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
-
+            
             <column name="end_hour" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
-
+            
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
-                <createTable tableName="class_room_scholars">
+        
+        <createTable tableName="class_room_scholars">
             <column name="scholars_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
@@ -53,18 +54,6 @@
         </createTable>
 
         <addPrimaryKey columnNames="class_rooms_id, scholars_id" tableName="class_room_scholars"/>
-
-        <addForeignKeyConstraint baseColumnNames="class_rooms_id"
-                                 baseTableName="class_room_scholars"
-                                 constraintName="fk_class_room_scholars_scholar_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="class_room"/>
-
-        <addForeignKeyConstraint baseColumnNames="scholars_id"
-                                 baseTableName="class_room_scholars"
-                                 constraintName="fk_class_room_scholars_classroom_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="scholar"/>
-
+        
     </changeSet>
 </databaseChangeLog>

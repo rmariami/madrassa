@@ -11,7 +11,6 @@ describe('ClassRoom e2e test', function () {
 
     beforeAll(function () {
         browser.get('/');
-        browser.driver.wait(protractor.until.elementIsVisible(element(by.css('h1'))));
 
         accountMenu.click();
         login.click();
@@ -24,13 +23,13 @@ describe('ClassRoom e2e test', function () {
     it('should load ClassRooms', function () {
         entityMenu.click();
         element(by.css('[ui-sref="class-room"]')).click().then(function() {
-            expect(element.all(by.css('h2')).first().getText()).toMatch(/ClassRooms/);
+            expect(element.all(by.css('h2')).first().getText()).toMatch(/Class Rooms/);
         });
     });
 
     it('should load create ClassRoom dialog', function () {
         element(by.css('[ui-sref="class-room.new"]')).click().then(function() {
-            expect(element(by.css('h4.modal-title')).getText()).toMatch(/Create or edit a ClassRoom/);
+            expect(element(by.css('h4.modal-title')).getText()).toMatch(/Create or edit a Class Room/);
             element(by.css('button.close')).click();
         });
     });

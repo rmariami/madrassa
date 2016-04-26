@@ -16,7 +16,7 @@
     <!--
         Added the entity Scholar.
     -->
-    <changeSet id="20160327172430" author="jhipster">
+    <changeSet id="20160327172430-1" author="jhipster">
         <createTable tableName="scholar">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -59,7 +59,8 @@
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
         <dropDefaultValue tableName="scholar" columnName="birth_date" columnDataType="datetime"/>
-                <createTable tableName="scholar_person_in_charge">
+        
+        <createTable tableName="scholar_person_in_charge">
             <column name="person_in_charges_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
@@ -69,18 +70,6 @@
         </createTable>
 
         <addPrimaryKey columnNames="scholars_id, person_in_charges_id" tableName="scholar_person_in_charge"/>
-
-        <addForeignKeyConstraint baseColumnNames="scholars_id"
-                                 baseTableName="scholar_person_in_charge"
-                                 constraintName="fk_scholar_person_in_charge_personincharge_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="scholar"/>
-
-        <addForeignKeyConstraint baseColumnNames="person_in_charges_id"
-                                 baseTableName="scholar_person_in_charge"
-                                 constraintName="fk_scholar_person_in_charge_scholar_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="person_in_charge"/>
         
     </changeSet>
 </databaseChangeLog>

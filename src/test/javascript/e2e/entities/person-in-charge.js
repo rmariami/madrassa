@@ -11,7 +11,6 @@ describe('PersonInCharge e2e test', function () {
 
     beforeAll(function () {
         browser.get('/');
-        browser.driver.wait(protractor.until.elementIsVisible(element(by.css('h1'))));
 
         accountMenu.click();
         login.click();
@@ -24,13 +23,13 @@ describe('PersonInCharge e2e test', function () {
     it('should load PersonInCharges', function () {
         entityMenu.click();
         element(by.css('[ui-sref="person-in-charge"]')).click().then(function() {
-            expect(element.all(by.css('h2')).first().getText()).toMatch(/PersonInCharges/);
+            expect(element.all(by.css('h2')).first().getText()).toMatch(/Person In Charges/);
         });
     });
 
     it('should load create PersonInCharge dialog', function () {
         element(by.css('[ui-sref="person-in-charge.new"]')).click().then(function() {
-            expect(element(by.css('h4.modal-title')).getText()).toMatch(/Create or edit a PersonInCharge/);
+            expect(element(by.css('h4.modal-title')).getText()).toMatch(/Create or edit a Person In Charge/);
             element(by.css('button.close')).click();
         });
     });

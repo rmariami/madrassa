@@ -16,7 +16,7 @@
     <!--
         Added the entity Inscription.
     -->
-    <changeSet id="20160404083433" author="jhipster">
+    <changeSet id="20160404083433-1" author="jhipster">
         <createTable tableName="inscription">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -40,23 +40,5 @@
         </createTable>
         <dropDefaultValue tableName="inscription" columnName="date" columnDataType="datetime"/>
         
-        <addForeignKeyConstraint baseColumnNames="class_room_id"
-                                 baseTableName="inscription"
-                                 constraintName="fk_inscription_classroom_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="class_room"/>
-
-        <addForeignKeyConstraint baseColumnNames="scholar_id"
-                                 baseTableName="inscription"
-                                 constraintName="fk_inscription_scholar_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="scholar"/>
-
-        <addForeignKeyConstraint baseColumnNames="author_id"
-                                 baseTableName="inscription"
-                                 constraintName="fk_inscription_author_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="jhi_user"/>
-
     </changeSet>
 </databaseChangeLog>

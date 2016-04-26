@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Scholar.
+    -->
+    <changeSet id="20160327172430-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="scholars_id"
+                                 baseTableName="scholar_person_in_charge"
+                                 constraintName="fk_scholar_person_in_charge_personincharge_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="scholar"/>
+        <addForeignKeyConstraint baseColumnNames="person_in_charges_id"
+                                 baseTableName="scholar_person_in_charge"
+                                 constraintName="fk_scholar_person_in_charge_scholar_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="person_in_charge"/>
+        
+    </changeSet>
+</databaseChangeLog>
